@@ -7,5 +7,8 @@ from pypdf import PdfReader, PdfWriter
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.pagesizes import LETTER, A4, landscape
 
-for i in range(1000):
+for i in range(2000):
     print("Hallo")
+c = canvas.Canvas("hello-world.pdf")
+c.save()
+
