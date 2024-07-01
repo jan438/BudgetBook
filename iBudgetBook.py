@@ -4,9 +4,7 @@ from pathlib import Path
 from reportlab.pdfgen.canvas import Canvas
 
 fName = "aFile.txt"
-path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook"
+path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/PDF"
 os.chdir(path)
 c = Canvas("Hello-world.pdf")
 c.save()
-
-
