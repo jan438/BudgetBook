@@ -64,9 +64,3 @@ if __name__ == '__main__':
     os.chdir(path)
     create_bar_graph()
     create_pie_chart(True)
-    c = Canvas("Hello-world.pdf")
-    textobject = c.beginText()
-    textobject.setTextOrigin(2, 2.5*inch)
-    c.drawString(100, 750, "Welcome to Reportlab!")
-    c.save()
-
