@@ -32,13 +32,18 @@ def create_bar_graph():
     d.add(bar, '')
     d.save(formats=['pdf'], outDir='.', fnRoot='test')
 
-#path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/PDF"
-#os.chdir(path)
 #c = Canvas("Hello-world.pdf")
 #textobject = c.beginText()
 #textobject.setTextOrigin(2, 2.5*inch)
 #c.drawString(100, 750, "Welcome to Reportlab!")
 #c.save()
 if __name__ == '__main__':
+    path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/PDF"
+    os.chdir(path)
     create_bar_graph()
+    c = Canvas("Hello-world.pdf")
+    textobject = c.beginText()
+    textobject.setTextOrigin(2, 2.5*inch)
+    c.drawString(100, 750, "Welcome to Reportlab!")
+    c.save()
 
