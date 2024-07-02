@@ -11,6 +11,7 @@ from reportlab.lib.colors import brown,blue, PCMYKColor, black
 from reportlab.graphics.charts.legends import Legend
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics.charts.barcharts import VerticalBarChart
+from reportlab.graphics.charts.piecharts import Pie
 
 def create_bar_graph():
     d = Drawing(280, 250)
@@ -32,10 +33,23 @@ def create_bar_graph():
     d.add(bar, '')
     d.save(formats=['pdf'], outDir='./PDF', fnRoot='test')
 
+def create_pie_chart():
+    d = Drawing()
+    pie = Pie()
+    pie.x = 200
+    pie.y = 65
+    pie_data = [10, 20, 30, 40]
+    pie.labels = [letter for letter in 'abcd']
+    pie.slices.strokeWidth = 0.5
+    pie.slices[3].popout = 20
+    d.add(pie)
+    d.save(formats=['pdf'], outDir='./PDF', fnRoot='test-pie')
+
 if __name__ == '__main__':
     path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/PDF"
     os.chdir(path)
     create_bar_graph()
+    create_pie_chart()
     c = Canvas("Hello-world.pdf")
     textobject = c.beginText()
     textobject.setTextOrigin(2, 2.5*inch)
