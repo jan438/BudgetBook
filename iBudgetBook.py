@@ -32,7 +32,7 @@ def create_bar_graph():
     bar.bars[1].fillColor   = PCMYKColor(23,51,0,4,alpha=85)
     bar.bars.fillColor       = PCMYKColor(100,0,90,50,alpha=85)
     d.add(bar, '')
-    d.save(formats=['pdf'], outDir='./PDF', fnRoot='test')
+    d.save(formats=['pdf'], outDir='./PDF', fnRoot='bar1')
 
 def create_pie_chart(legend=False):
     data = [10, 20, 30, 40]
@@ -49,7 +49,7 @@ def create_pie_chart(legend=False):
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     d.add(pie)
-    d.save(formats=['pdf'], outDir='./PDF', fnRoot='test-pie')
+    d.save(formats=['pdf'], outDir='./PDF', fnRoot='pie1')
 
 def add_legend(draw_obj, chart, data):
     legend = Legend()
