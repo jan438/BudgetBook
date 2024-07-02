@@ -30,13 +30,8 @@ def create_bar_graph():
     bar.bars[1].fillColor   = PCMYKColor(23,51,0,4,alpha=85)
     bar.bars.fillColor       = PCMYKColor(100,0,90,50,alpha=85)
     d.add(bar, '')
-    d.save(formats=['pdf'], outDir='.', fnRoot='test')
+    d.save(formats=['pdf'], outDir='./PDF', fnRoot='test')
 
-#c = Canvas("Hello-world.pdf")
-#textobject = c.beginText()
-#textobject.setTextOrigin(2, 2.5*inch)
-#c.drawString(100, 750, "Welcome to Reportlab!")
-#c.save()
 if __name__ == '__main__':
     path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/PDF"
     os.chdir(path)
