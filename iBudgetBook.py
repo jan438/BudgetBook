@@ -11,7 +11,8 @@ from reportlab.lib.colors import brown,blue, PCMYKColor, black
 from reportlab.graphics.charts.legends import Legend
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics.charts.barcharts import VerticalBarChart
-from reportlab.graphics.charts.piecharts import Pie
+from reportlab.graphics.shapes import Drawing
+from reportlab.lib.validators import Auto
 
 def create_bar_graph():
     d = Drawing(280, 250)
