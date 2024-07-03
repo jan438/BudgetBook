@@ -60,6 +60,9 @@ if __name__ == '__main__':
     os.chdir(path)
     data_folder = Path("./Data/")
     file_to_open = data_folder / "BTRecords.csv"
-    data = [[1,2,3,None,None,None,5,5,5],[1,2,3,4,5,6,7,8,9]        ]
+    with open(file_to_open, 'r') as file:
+        csvreader = csv.reader(file)
+        for row in csvreader:
+            data = [[1,2,3,None,None,None,5,5,5],[1,2,3,4,5,6,7,8,9]        ]
     create_bar_graph(data)
     #create_pie_chart(True)
