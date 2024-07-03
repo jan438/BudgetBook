@@ -59,4 +59,4 @@ if __name__ == '__main__':
     path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/PDF"
     os.chdir(path)
     create_bar_graph()
-    create_pie_chart(True)
+    #create_pie_chart(True)
