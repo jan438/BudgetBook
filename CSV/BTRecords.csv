@@ -1,11 +1,2 @@
-Date,Description,Deposits,Withdrawls,Balance
-20-Aug-2020,NEFT,"23,237.00",00.00,"37,243.31"
-20-Aug-2020,NEFT,00.00,"3,724.33","33,518.98"
-20-Aug-2020,Commission,245.00,00.00,"33,763.98"
-20-Aug-2020,NEFT,"12,480.00",00.00,"46,243.98"
-20-Aug-2020,RTGS,00.00,"11,561.00","34,682.98"
-20-Aug-2020,Miscellaneous,"88,736.00",00.00,"123,418.98"
-20-Aug-2020,Cheque,00.00,"15,427.37","107,991.61"
-20-Aug-2020,Miscellaneous,253.50,00.00,"108,245.11"
-20-Aug-2020,Purchase,00.00,"108,245.11",00.00
-20-Aug-2020,Cash,327.21,00.00,327.21
+Date,Type,Description,Category,Account1,Account2,Deposits,Withdrawls
+24-Dec-2023,"Transfer","Begin Saldo","abc","Begin Saldo","Microsoft",0.09,0.00
