@@ -28,7 +28,7 @@ def create_bar_graph(data):
     bar.bars[1].fillColor   = PCMYKColor(23,51,0,4,alpha=85)
     bar.bars.fillColor       = PCMYKColor(100,0,90,50,alpha=85)
     d.add(bar, '')
-    d.save(formats=['pdf'], outDir='./Data/PDF', fnRoot='bar1')
+    d.save(formats=['pdf'], outDir='./Data', fnRoot='bar1')
 
 def create_pie_chart(legend=False):
     data = [10, 20, 30, 40]
@@ -45,7 +45,7 @@ def create_pie_chart(legend=False):
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     d.add(pie)
-    d.save(formats=['pdf'], outDir='./Data/PDF', fnRoot='pie1')
+    d.save(formats=['pdf'], outDir='./Data', fnRoot='pie1')
 
 def add_legend(draw_obj, chart, data):
     legend = Legend()
@@ -56,7 +56,7 @@ def add_legend(draw_obj, chart, data):
     draw_obj.add(legend)
 
 if __name__ == '__main__':
-    path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/Data"
+    path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook"
     os.chdir(path)
     data = [[1,2,3,None,None,None,5,5,5],[1,2,3,4,5,6,7,8,9]        ]
     create_bar_graph(data)
