@@ -19,8 +19,7 @@ def create_bar_graph():
     bar = VerticalBarChart()
     bar.x = 50
     bar.y = 85
-    data = [[1,2,3,None,None,None,5]
-            ]
+    data = [[1,2,3,None,None,None,5],[1,2,3,4,5,6,7]        ]
     bar.data = data
     bar.categoryAxis.categoryNames = ['Year1', 'Year2', 'Year3',
                                       'Year4', 'Year5', 'Year6',
