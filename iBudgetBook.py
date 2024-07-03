@@ -15,7 +15,7 @@ from reportlab.graphics.shapes import Drawing
 from reportlab.lib.validators import Auto
 
 def create_bar_graph():
-    d = Drawing(700, 500)
+    d = Drawing(600, 500)
     bar = VerticalBarChart()
     bar.x = 50
     bar.y = 85
