@@ -23,7 +23,7 @@ def create_bar_graph(data):
     bar.data = data
     bar.categoryAxis.categoryNames = ['Microsoft', 'Google', 'Apple',
                                       'Cash', 'Sjoelen', 'Strippenkaart',
-                                      'Begin Salos', 'Jan438', 'Frans' ]
+                                      'Begin Salos', 'Frans' ]
     bar.bars[0].fillColor   = PCMYKColor(0,100,100,40,alpha=85)
     bar.bars[1].fillColor   = PCMYKColor(23,51,0,4,alpha=85)
     bar.bars.fillColor       = PCMYKColor(100,0,90,50,alpha=85)
@@ -64,6 +64,6 @@ if __name__ == '__main__':
         csvreader = csv.reader(file)
         for row in csvreader:
             if row[0] == "Date":
-                data = [[1,2,3,None,None,None,5,5,5],[1,2,3,4,5,6,7,8,9]        ]
+                data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]        ]
     create_bar_graph(data)
     #create_pie_chart(True)
