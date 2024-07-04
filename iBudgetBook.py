@@ -66,5 +66,6 @@ if __name__ == '__main__':
     #        if row[0] == "Date":
     data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]]
     data.pop()
+    data.append([8,7,6,5,4,3,2,1])
     create_bar_graph(data)
     create_pie_chart(True)
