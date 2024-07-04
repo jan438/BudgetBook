@@ -60,10 +60,12 @@ if __name__ == '__main__':
     os.chdir(path)
     data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]]
     file_to_open = "BTRecords.csv"
+    count = 0
     with open(file_to_open, 'r') as file:
         csvreader = csv.reader(file)
         for row in csvreader:
+            count += 1
             data.pop()
-            data.append([8,7,6,5,4,3,2,1])
+            data.append([count,7,6,5,4,3,2,count])
     create_bar_graph(data)
     create_pie_chart(True)
