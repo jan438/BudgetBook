@@ -65,7 +65,7 @@ if __name__ == '__main__':
         csvreader = csv.reader(file)
         for row in csvreader:
             count += 1
-            data.pop()
-            data.append([count,7,6,5,4,3,2,count])
+    data.pop()
+    data.append([count,7,6,5,4,3,2,count])
     create_bar_graph(data)
     create_pie_chart(True)
