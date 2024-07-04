@@ -58,12 +58,12 @@ def add_legend(draw_obj, chart, data):
 if __name__ == '__main__':
     path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook"
     os.chdir(path)
-    data_folder = Path("./Data/")
-    file_to_open = data_folder / "BTRecords.csv"
-    with open(file_to_open, 'r') as file:
-        csvreader = csv.reader(file)
-        for row in csvreader:
-            if row[0] == "Date":
-                data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]        ]
-    create_bar_graph(data)
-    #create_pie_chart(True)
+    #data_folder = Path("./Data/")
+    #file_to_open = data_folder / "BTRecords.csv"
+    #with open(file_to_open, 'r') as file:
+    #    csvreader = csv.reader(file)
+    #    for row in csvreader:
+    #        if row[0] == "Date":
+    #            data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]        ]
+    #create_bar_graph(data)
+    create_pie_chart(True)
