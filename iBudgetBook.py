@@ -56,7 +56,7 @@ def add_legend(draw_obj, chart, data):
     draw_obj.add(legend)
 
 if __name__ == '__main__':
-    path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/Data"
+    path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook"
     os.chdir(path)
     data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]]
     file_to_open = "BTRecords.csv"
@@ -64,6 +64,7 @@ if __name__ == '__main__':
     with open(file_to_open, 'r') as file:
         csvreader = csv.reader(file)
         for row in csvreader:
+            print(row)
             count += 1
     data.pop()
     data.append([count,7,6,5,4,3,2,count])
