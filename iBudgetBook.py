@@ -62,11 +62,14 @@ if __name__ == '__main__':
     file_to_open = "BTRecords.csv"
     count = 0
     som = 0
+    findata = []
     with open(file_to_open, 'r') as file:
         csvreader = csv.reader(file)
         for row in csvreader:
-            print(row)
+            findata.append(row)
+            print("row", row)
             count += 1
+    print("Length", len(findata))
     data.pop()
     data.append([count,7,6,som,4,3,2,count])
     create_bar_graph(data)
