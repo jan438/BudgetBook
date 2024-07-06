@@ -71,8 +71,9 @@ if __name__ == '__main__':
         for row in csvreader:
             findata.append(row)
             print("row", row)
-            output_num = remove_decimal_num(row[5])
-            print("row[5]",row[5], output_num)
+            if count > 0:
+                output_num = remove_decimal_num(row[5])
+                print("row[5]",row[5], output_num, count)
             count += 1
     print("Length", len(findata))
     data.pop()
