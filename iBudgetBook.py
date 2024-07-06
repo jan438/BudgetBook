@@ -68,6 +68,7 @@ if __name__ == '__main__':
         for row in csvreader:
             findata.append(row)
             print("row", row)
+            print("row[5]",row[5])
             count += 1
     print("Length", len(findata))
     data.pop()
