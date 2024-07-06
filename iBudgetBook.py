@@ -78,7 +78,7 @@ if __name__ == '__main__':
             count += 1
     print("Length", len(findata))
     data.pop()
-    data.append([count,7,6,som,4,3,2,count])
+    data.append([0,0,0,som,0,0,0,0])
     create_bar_graph(data)
     create_pie_chart(True)
     key = input("Wait")
