@@ -72,6 +72,7 @@ if __name__ == '__main__':
             print("row", row)
             if count > 0:
                 output_num = remove_decimal_num(row[5])
+                som = som + int(output_num)
                 print("row[5]",row[5], output_num, count)
                 findata.append(row)
             count += 1
