@@ -14,6 +14,9 @@ from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.graphics.shapes import Drawing
 from reportlab.lib.validators import Auto
 
+def remove_decimal_num(string_decimal):
+    return ''.join(string_decimal.split('.'))
+
 def create_bar_graph(data):
     d = Drawing(600, 500)
     bar = VerticalBarChart()
@@ -68,7 +71,8 @@ if __name__ == '__main__':
         for row in csvreader:
             findata.append(row)
             print("row", row)
-            print("row[5]",row[5])
+            output_num = remove_decimal_num(row[5])
+            print("row[5]",row[5], output_num)
             count += 1
     print("Length", len(findata))
     data.pop()
