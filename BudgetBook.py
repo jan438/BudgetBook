@@ -11,7 +11,7 @@ from reportlab.lib.colors import brown,blue, PCMYKColor, black
 from reportlab.graphics.charts.legends import Legend
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics.charts.barcharts import VerticalBarChart
-from reportlab.graphics.shapes import Drawing
+from reportlab.graphics.shapes import Drawing, String
 from reportlab.lib.validators import Auto
 
 def remove_decimal_num(string_decimal):
