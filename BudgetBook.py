@@ -74,6 +74,9 @@ def add_legend(draw_obj, chart, data):
     legend.colorNamePairs = Auto(obj=chart)
     draw_obj.add(legend)
 
+def BudgetBook():
+    return 0
+
 if __name__ == '__main__':
     path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/Data"
     os.chdir(path)
@@ -107,4 +110,5 @@ if __name__ == '__main__':
     ptext = Paragraph('Text after the chart', styles["Normal"])
     elements.append(ptext)
     doc.build(elements)
+    BudgetBook()
     key = input("Wait")
