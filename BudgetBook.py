@@ -100,8 +100,6 @@ if __name__ == '__main__':
         csvreader = csv.reader(file)
         for row in csvreader:
             if count > 0:
-                output_num = remove_decimal_num(row[5])
-                #som = som + int(output_num)
                 findata.append(row)
             count += 1
     print("Length", len(findata))
@@ -112,6 +110,20 @@ if __name__ == '__main__':
             output_num = remove_decimal_num(findata[j][5])
             if findata[j][4] == "Microsoft":
                 accountsbalances[0] = accountsbalances[0] + int(output_num)
+            if findata[j][4] == "Google":
+                accountsbalances[1] = accountsbalances[1] + int(output_num)
+            if findata[j][4] == "Apple":
+                accountsbalances[2] = accountsbalances[2] + int(output_num)
+            if findata[j][4] == "Cash":
+                accountsbalances[3] = accountsbalances[3] + int(output_num)
+            if findata[j][4] == "Sjoelen":
+                accountsbalances[4] = accountsbalances[4] + int(output_num)
+            if findata[j][4] == "Strippenkaart":
+                accountsbalances[5] = accountsbalances[5] + int(output_num)
+            if findata[j][4] == "Begin Saldos":
+                accountsbalances[6] = accountsbalances[6] + int(output_num)
+            if findata[j][4] == "Frans":
+                accountsbalances[7] = accountsbalances[7] + int(output_num)
     data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6],accountsbalances[7]])
     create_bar_graph(data)
     create_pie_chart(True)
