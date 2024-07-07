@@ -105,9 +105,8 @@ if __name__ == '__main__':
     print("Length", len(findata))
     data.pop()
     for j in range(len(findata)):
+        output_num = remove_decimal_num(findata[j][5])
         if findata[j][1] == "Transfer":
-            print(findata[j], findata[j][5])
-            output_num = remove_decimal_num(findata[j][5])
             if findata[j][4] == "Microsoft":
                 accountsbalances[0] = accountsbalances[0] + int(output_num)
             if findata[j][4] == "Google":
