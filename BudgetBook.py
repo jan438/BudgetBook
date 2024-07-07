@@ -15,6 +15,7 @@ from reportlab.graphics.shapes import Drawing, String
 from reportlab.lib.validators import Auto
 
 accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart','Begin Salos', 'Frans' ]
+categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Singels']
 
 def remove_decimal_num(string_decimal):
     return ''.join(string_decimal.split('.'))
