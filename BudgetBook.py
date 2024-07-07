@@ -75,6 +75,16 @@ def add_legend(draw_obj, chart, data):
     draw_obj.add(legend)
 
 def BudgetBook():
+    doc = SimpleDocTemplate('flowable_with_chart.pdf')
+    elements = []
+    styles = getSampleStyleSheet()
+    ptext = Paragraph('Text before the chart', styles["Normal"])
+    elements.append(ptext)
+    chart = pie_chart_with_legend()
+    elements.append(chart)
+    ptext = Paragraph('Text after the chart', styles["Normal"])
+    elements.append(ptext)
+    doc.build(elements)
     return 0
 
 if __name__ == '__main__':
@@ -92,7 +102,6 @@ if __name__ == '__main__':
             if count > 0:
                 output_num = remove_decimal_num(row[5])
                 som = som + int(output_num)
-                print("row[5]",row[5], output_num, count)
                 findata.append(row)
             count += 1
     print("Length", len(findata))
@@ -100,15 +109,5 @@ if __name__ == '__main__':
     data.append([0,0,0,som,0,0,0,0])
     create_bar_graph(data)
     create_pie_chart(True)
-    doc = SimpleDocTemplate('flowable_with_chart.pdf')
-    elements = []
-    styles = getSampleStyleSheet()
-    ptext = Paragraph('Text before the chart', styles["Normal"])
-    elements.append(ptext)
-    chart = pie_chart_with_legend()
-    elements.append(chart)
-    ptext = Paragraph('Text after the chart', styles["Normal"])
-    elements.append(ptext)
-    doc.build(elements)
     BudgetBook()
     key = input("Wait")
