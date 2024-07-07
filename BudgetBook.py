@@ -16,6 +16,7 @@ from reportlab.lib.validators import Auto
 
 accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart','Begin Salos', 'Frans' ]
 categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Singels']
+accountsbalances = [0,0,0,0,0,0,0,0]
 
 def remove_decimal_num(string_decimal):
     return ''.join(string_decimal.split('.'))
@@ -106,7 +107,7 @@ if __name__ == '__main__':
             count += 1
     print("Length", len(findata))
     data.pop()
-    data.append([0,0,0,som,0,0,0,0])
+    data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6],accountsbalances[7]])
     create_bar_graph(data)
     create_pie_chart(True)
     BudgetBookPie()
