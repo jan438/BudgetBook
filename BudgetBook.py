@@ -74,7 +74,7 @@ def add_legend(draw_obj, chart, data):
     legend.colorNamePairs = Auto(obj=chart)
     draw_obj.add(legend)
 
-def BudgetBook():
+def BudgetBookPie():
     doc = SimpleDocTemplate('flowable_with_chart.pdf')
     elements = []
     styles = getSampleStyleSheet()
@@ -109,5 +109,5 @@ if __name__ == '__main__':
     data.append([0,0,0,som,0,0,0,0])
     create_bar_graph(data)
     create_pie_chart(True)
-    BudgetBook()
+    BudgetBookPie()
     key = input("Wait")
