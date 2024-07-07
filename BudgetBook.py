@@ -37,7 +37,6 @@ def create_pie_chart(legend=False):
     data = [10, 20, 30, 40]
     d = Drawing()
     pie = Pie()
-    # required by Auto
     pie._seriesCount = 4
     if legend:
         add_legend(d, pie, data)
@@ -59,7 +58,7 @@ def pie_chart_with_legend():
     pie.x = 150
     pie.y = 65
     pie.data = data
-    pie.labels = [letter for letter in 'abcdefg']
+    pie.labels = accountnames
     pie.slices.strokeWidth = 0.5
     drawing.add(my_title)
     drawing.add(pie)
