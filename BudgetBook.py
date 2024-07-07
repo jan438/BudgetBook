@@ -99,7 +99,6 @@ if __name__ == '__main__':
     with open(file_to_open, 'r') as file:
         csvreader = csv.reader(file)
         for row in csvreader:
-            print("row", row)
             if count > 0:
                 output_num = remove_decimal_num(row[5])
                 #som = som + int(output_num)
@@ -109,7 +108,10 @@ if __name__ == '__main__':
     data.pop()
     for j in range(len(findata)):
         if findata[j][1] == "Transfer":
-            print(findata[j])
+            print(findata[j], findata[j][5])
+            output_num = remove_decimal_num(findata[j][5])
+            if findata[j][4] == "Microsoft":
+                accountsbalances[0] = accountsbalances[0] + int(output_num)
     data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6],accountsbalances[7]])
     create_bar_graph(data)
     create_pie_chart(True)
