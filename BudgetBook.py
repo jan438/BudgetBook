@@ -102,11 +102,14 @@ if __name__ == '__main__':
             print("row", row)
             if count > 0:
                 output_num = remove_decimal_num(row[5])
-                som = som + int(output_num)
+                #som = som + int(output_num)
                 findata.append(row)
             count += 1
     print("Length", len(findata))
     data.pop()
+    for j in range(len(findata)):
+        if findata[j][1] == "Transfer":
+            print(findata[j])
     data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6],accountsbalances[7]])
     create_bar_graph(data)
     create_pie_chart(True)
