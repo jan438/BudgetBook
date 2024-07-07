@@ -14,6 +14,8 @@ from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.graphics.shapes import Drawing, String
 from reportlab.lib.validators import Auto
 
+accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart','Begin Salos', 'Frans' ]
+
 def remove_decimal_num(string_decimal):
     return ''.join(string_decimal.split('.'))
 
@@ -24,9 +26,7 @@ def create_bar_graph(data):
     bar.y = 85
     bar.width = 475
     bar.data = data
-    bar.categoryAxis.categoryNames = ['Microsoft', 'Google', 'Apple',
-                                      'Cash', 'Sjoelen', 'Strippenkaart',
-                                      'Begin Salos', 'Frans' ]
+    bar.categoryAxis.categoryNames = accountnames
     bar.bars[0].fillColor   = PCMYKColor(0,100,100,40,alpha=85)
     bar.bars[1].fillColor   = PCMYKColor(23,51,0,4,alpha=85)
     bar.bars.fillColor       = PCMYKColor(100,0,90,50,alpha=85)
