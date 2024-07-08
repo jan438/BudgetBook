@@ -95,4 +95,4 @@ class PieChart01(_DrawingEditorMixin,Drawing):
         self.legendHeader.x              = 150
 
 if __name__=="__main__": #NORUNTESTS
-    PieChart01().save(formats=['pdf'],outDir='.',fnRoot=None)
+    PieChart01().save(formats=['pdf'],outDir='./Data',fnRoot=None)
