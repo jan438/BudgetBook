@@ -20,6 +20,9 @@ accountsbalances = [0,0,0,0,0,0,0,0]
 
 def begin_saldos():
     print("Begin saldos")
+    for j in range(len(findata)):
+        if findata[j][1] == "Transfer":
+            print(j, findata[j])
     return 0
 
 def remove_decimal_num(string_decimal):
