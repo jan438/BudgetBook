@@ -21,7 +21,7 @@ accountsbalances = [0,0,0,0,0,0,0,0]
 def begin_saldos():
     print("Begin saldos")
     for j in range(len(findata)):
-        if findata[j][1] == "Transfer":
+        if findata[j][1] == "Transfer" and findata[j][3] == "Begin Saldos":
             print(j, findata[j])
     return 0
 
