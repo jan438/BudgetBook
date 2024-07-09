@@ -14,15 +14,21 @@ from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.graphics.shapes import Drawing, String
 from reportlab.lib.validators import Auto
 
+MyAccounts = []
 accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart','Begin Salos', 'Frans' ]
 categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Singels']
 accountsbalances = [0,0,0,0,0,0,0,0]
+
+class Account:
+    def __init__(self, name):
+        self.name = name
 
 def begin_saldos():
     print("Begin saldos")
     for j in range(len(findata)):
         if findata[j][1] == "Transfer" and findata[j][3] == "Begin Saldos":
             print(j, findata[j])
+            MyAccounts.append(Account(findata[j][4]))
     return 0
 
 def remove_decimal_num(string_decimal):
@@ -137,4 +143,5 @@ if __name__ == '__main__':
     create_bar_graph(data)
     create_pie_chart(True)
     #BudgetBookPie()
+    print("MyAccounts", len(MyAccounts))
     key = input("Wait")
