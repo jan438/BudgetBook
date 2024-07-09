@@ -112,6 +112,7 @@ if __name__ == '__main__':
                 findata.append(row)
             count += 1
     print("Length", len(findata))
+    begin_saldos()
     data.pop()
     for j in range(len(findata)):
         output_num = remove_decimal_num(findata[j][5])
@@ -136,5 +137,4 @@ if __name__ == '__main__':
     create_bar_graph(data)
     create_pie_chart(True)
     #BudgetBookPie()
-    begin_saldos()
     key = input("Wait")
