@@ -144,4 +144,6 @@ if __name__ == '__main__':
     create_pie_chart(True)
     #BudgetBookPie()
     print("MyAccounts", len(MyAccounts))
+    for j in range(len(MyAccounts)):
+        print("Name", MyAccounts[j].name)
     key = input("Wait")
