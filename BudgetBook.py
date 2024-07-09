@@ -49,7 +49,7 @@ def create_bar_graph(data):
     d.add(bar, '')
     d.save(formats=['pdf'], outDir='./Data', fnRoot='bar1')
 
-def create_pie_chart():
+def create_pie_chart(MyAccounts):
     data = [10, 20, 30, 40]
     d = Drawing()
     pie = Pie()
@@ -141,7 +141,7 @@ if __name__ == '__main__':
                 accountsbalances[7] = accountsbalances[7] + int(output_num)
     data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6],accountsbalances[7]])
     create_bar_graph(data)
-    create_pie_chart()
+    create_pie_chart(MyAccounts)
     #BudgetBookPie()
     print("MyAccounts", len(MyAccounts))
     for j in range(len(MyAccounts)):
