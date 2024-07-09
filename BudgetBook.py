@@ -23,7 +23,6 @@ class Account:
     def __init__(self, name, balance):
         self.name = name
         self.balance = int(remove_decimal_num(balance))
-        print(str(balance))
 
 def begin_saldos():
     print("Begin saldos")
