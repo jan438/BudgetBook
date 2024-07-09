@@ -20,15 +20,16 @@ categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Singels']
 accountsbalances = [0,0,0,0,0,0,0,0]
 
 class Account:
-    def __init__(self, name):
+    def __init__(self, name, balance):
         self.name = name
+        self.balance = balance
 
 def begin_saldos():
     print("Begin saldos")
     for j in range(len(findata)):
         if findata[j][1] == "Transfer" and findata[j][3] == "Begin Saldos":
             print(j, findata[j])
-            MyAccounts.append(Account(findata[j][4]))
+            MyAccounts.append(Account(findata[j][4], findata[j][5]))
     return 0
 
 def remove_decimal_num(string_decimal):
@@ -145,5 +146,5 @@ if __name__ == '__main__':
     #BudgetBookPie()
     print("MyAccounts", len(MyAccounts))
     for j in range(len(MyAccounts)):
-        print("Name", MyAccounts[j].name)
+        print("Name", MyAccounts[j].name, MyAccounts[j].balance)
     key = input("Wait")
