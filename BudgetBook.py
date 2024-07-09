@@ -18,6 +18,10 @@ accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart
 categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Singels']
 accountsbalances = [0,0,0,0,0,0,0,0]
 
+def begin_saldos():
+    print("Begin saldos")
+    return 0
+
 def remove_decimal_num(string_decimal):
     return ''.join(string_decimal.split('.'))
 
@@ -128,5 +132,6 @@ if __name__ == '__main__':
     data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6],accountsbalances[7]])
     create_bar_graph(data)
     create_pie_chart(True)
-    BudgetBookPie()
+    #BudgetBookPie()
+    begin_saldos()
     key = input("Wait")
