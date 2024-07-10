@@ -48,7 +48,7 @@ def remove_decimal_num(string_decimal):
     return ''.join(string_decimal.split('.'))
 
 def create_bar_graph(data):
-    d = Drawing(600, 500)
+    d = Drawing()
     bar = VerticalBarChart()
     bar.x = 50
     bar.y = 85
