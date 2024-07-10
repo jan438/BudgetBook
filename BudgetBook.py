@@ -66,7 +66,7 @@ def create_pie_chart(MyAccounts):
     data = [10, 20, 30, 40]
     d = Drawing()
     pie = Pie()
-    pie._seriesCount = 4
+    pie._seriesCount = len(data)
     add_legend(d, pie, data)
     pie.x = 150
     pie.y = 65
