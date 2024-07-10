@@ -70,7 +70,7 @@ def create_pie_chart(MyAccounts):
     add_legend(d, pie, data)
     pie.x = 150
     pie.y = 65
-    pie_data = data
+    pie.data = data
     pie.labels = [letter for letter in 'abcd']
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
