@@ -63,13 +63,13 @@ def create_bar_graph(data):
     d.save(formats=['pdf'], outDir='./Data', fnRoot='bar1')
 
 def create_pie_chart(MyAccounts):
-    data = [10, 20, 30, 40]
     d = Drawing()
     pie = Pie()
-    pie._seriesCount = len(data)
-    add_legend(d, pie, data)
     pie.x = 150
     pie.y = 65
+    data = [10, 20, 30, 40]
+    pie._seriesCount = len(data)
+    add_legend(d, pie, data)
     pie.data = data
     pie.labels = [letter for letter in 'abcd']
     pie.slices.strokeWidth = 0.5
