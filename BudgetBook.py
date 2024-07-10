@@ -17,7 +17,6 @@ from reportlab.lib.validators import Auto
 MyAccounts = []
 accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart','Begin Salos', 'Frans' ]
 categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Singels']
-accountsbalances = [0,0,0,0,0,0,0,0]
 
 class Account:
     def __init__(self, name, balance):
@@ -34,7 +33,29 @@ def begin_saldos(findata):
 
 def process_transactions(findata):
     print("Process tranactions", len(findata))
-    data = []
+    accountsbalances = [0,0,0,0,0,0,0,0]
+    data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]]
+    data.pop()
+    for j in range(len(findata)):
+        output_num = remove_decimal_num(findata[j][5])
+        if findata[j][1] == "Transfer":
+            if findata[j][4] == "Microsoft":
+                accountsbalances[0] = accountsbalances[0] + int(output_num)
+            if findata[j][4] == "Google":
+                accountsbalances[1] = accountsbalances[1] + int(output_num)
+            if findata[j][4] == "Apple":
+                accountsbalances[2] = accountsbalances[2] + int(output_num)
+            if findata[j][4] == "Cash":
+                accountsbalances[3] = accountsbalances[3] + int(output_num)
+            if findata[j][4] == "Sjoelen":
+                accountsbalances[4] = accountsbalances[4] + int(output_num)
+            if findata[j][4] == "Strippenkaart":
+                accountsbalances[5] = accountsbalances[5] + int(output_num)
+            if findata[j][4] == "Begin Saldos":
+                accountsbalances[6] = accountsbalances[6] + int(output_num)
+            if findata[j][4] == "Frans":
+                accountsbalances[7] = accountsbalances[7] + int(output_num)
+    data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6],accountsbalances[7]])
     return data
 
 def remove_decimal_num(string_decimal):
@@ -124,28 +145,6 @@ if __name__ == '__main__':
     print("Length", len(findata))
     begin_saldos(findata)
     data = process_transactions(findata)
-    data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]]
-    data.pop()
-    for j in range(len(findata)):
-        output_num = remove_decimal_num(findata[j][5])
-        if findata[j][1] == "Transfer":
-            if findata[j][4] == "Microsoft":
-                accountsbalances[0] = accountsbalances[0] + int(output_num)
-            if findata[j][4] == "Google":
-                accountsbalances[1] = accountsbalances[1] + int(output_num)
-            if findata[j][4] == "Apple":
-                accountsbalances[2] = accountsbalances[2] + int(output_num)
-            if findata[j][4] == "Cash":
-                accountsbalances[3] = accountsbalances[3] + int(output_num)
-            if findata[j][4] == "Sjoelen":
-                accountsbalances[4] = accountsbalances[4] + int(output_num)
-            if findata[j][4] == "Strippenkaart":
-                accountsbalances[5] = accountsbalances[5] + int(output_num)
-            if findata[j][4] == "Begin Saldos":
-                accountsbalances[6] = accountsbalances[6] + int(output_num)
-            if findata[j][4] == "Frans":
-                accountsbalances[7] = accountsbalances[7] + int(output_num)
-    data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6],accountsbalances[7]])
     create_bar_graph(data)
     create_pie_chart(MyAccounts)
     #BudgetBookPie()
