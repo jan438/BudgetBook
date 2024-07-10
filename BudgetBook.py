@@ -24,8 +24,8 @@ class Account:
         self.name = name
         self.balance = int(remove_decimal_num(balance))
 
-def begin_saldos():
-    print("Begin saldos")
+def begin_saldos(findata):
+    print("Begin saldos", len(findata))
     for j in range(len(findata)):
         if findata[j][1] == "Transfer" and findata[j][3] == "Begin Saldos":
             print(j, findata[j])
@@ -117,7 +117,7 @@ if __name__ == '__main__':
                 findata.append(row)
             count += 1
     print("Length", len(findata))
-    begin_saldos()
+    begin_saldos(findata)
     data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]]
     data.pop()
     for j in range(len(findata)):
