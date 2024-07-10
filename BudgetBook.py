@@ -34,8 +34,7 @@ def begin_saldos(findata):
 def process_transactions(findata):
     print("Process tranactions", len(findata))
     accountsbalances = [0,0,0,0,0,0,0,0]
-    data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]]
-    data.pop()
+    data = []
     for j in range(len(findata)):
         output_num = remove_decimal_num(findata[j][5])
         if findata[j][1] == "Transfer":
