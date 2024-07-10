@@ -59,7 +59,7 @@ def create_bar_graph(data):
     bar.bars[1].fillColor   = PCMYKColor(23,51,0,4,alpha=85)
     bar.bars.fillColor       = PCMYKColor(100,0,90,50,alpha=85)
     d.add(bar, '')
-    d.save(formats=['pdf'], outDir='./Data', fnRoot='bar1')
+    return d
 
 def create_pie_chart(MyAccounts):
     d = Drawing()
@@ -87,7 +87,16 @@ def add_legend(draw_obj, chart, data):
     draw_obj.add(legend)
 
 def BudgetBookBar(data):
-    create_bar_graph(data)
+    doc = SimpleDocTemplate('flowable_with_barchart.pdf')
+    elements = []
+    styles = getSampleStyleSheet()
+    ptext = Paragraph('Text before the chart', styles["Normal"])
+    elements.append(ptext)
+    chart = create_bar_graph(data)
+    elements.append(chart)
+    ptext = Paragraph('Text after the chart', styles["Normal"])
+    elements.append(ptext)
+    doc.build(elements)
     return 0
 
 def BudgetBookPie(MyAccounts):
@@ -119,7 +128,6 @@ if __name__ == '__main__':
     print("Length", len(findata))
     begin_saldos(findata)
     data = process_transactions(findata)
-    create_bar_graph(data)
     BudgetBookBar(data)
     BudgetBookPie(MyAccounts)
     print("MyAccounts", len(MyAccounts))
