@@ -104,7 +104,6 @@ def BudgetBookPie():
 if __name__ == '__main__':
     path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/Data"
     os.chdir(path)
-    data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]]
     file_to_open = "BTRecords.csv"
     count = 0
     som = 0
@@ -119,6 +118,7 @@ if __name__ == '__main__':
             count += 1
     print("Length", len(findata))
     begin_saldos()
+    data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]]
     data.pop()
     for j in range(len(findata)):
         output_num = remove_decimal_num(findata[j][5])
