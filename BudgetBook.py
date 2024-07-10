@@ -86,7 +86,7 @@ def add_legend(draw_obj, chart, data):
     legend.colorNamePairs = Auto(obj=chart)
     draw_obj.add(legend)
 
-def BudgetBookPie():
+def BudgetBookPie(MyAccounts):
     doc = SimpleDocTemplate('flowable_with_chart.pdf')
     elements = []
     styles = getSampleStyleSheet()
@@ -116,7 +116,7 @@ if __name__ == '__main__':
     begin_saldos(findata)
     data = process_transactions(findata)
     create_bar_graph(data)
-    BudgetBookPie()
+    BudgetBookPie(MyAccounts)
     print("MyAccounts", len(MyAccounts))
     for j in range(len(MyAccounts)):
         print("Name", MyAccounts[j].name, MyAccounts[j].balance)
