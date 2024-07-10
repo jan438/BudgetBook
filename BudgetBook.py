@@ -77,23 +77,7 @@ def create_pie_chart(MyAccounts):
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     d.add(pie)
-    d.save(formats=['pdf'], outDir='./Data', fnRoot='pie1')
-
-def pie_chart_with_legend():
-    data = list(range(15, 105, 15))
-    drawing = Drawing(width=400, height=200)
-    my_title = String(170, 40, 'My Pie Chart', fontSize=14)
-    pie = Pie()
-    pie.sideLabels = True
-    pie.x = 150
-    pie.y = 65
-    pie.data = data
-    pie.labels = accountnames
-    pie.slices.strokeWidth = 0.5
-    drawing.add(my_title)
-    drawing.add(pie)
-    add_legend(drawing, pie, data)
-    return drawing
+    return d
 
 def add_legend(draw_obj, chart, data):
     legend = Legend()
@@ -109,7 +93,7 @@ def BudgetBookPie():
     styles = getSampleStyleSheet()
     ptext = Paragraph('Text before the chart', styles["Normal"])
     elements.append(ptext)
-    chart = pie_chart_with_legend()
+    chart = create_pie_chart(MyAccounts)
     elements.append(chart)
     ptext = Paragraph('Text after the chart', styles["Normal"])
     elements.append(ptext)
@@ -134,7 +118,7 @@ if __name__ == '__main__':
     data = process_transactions(findata)
     create_bar_graph(data)
     create_pie_chart(MyAccounts)
-    #BudgetBookPie()
+    BudgetBookPie()
     print("MyAccounts", len(MyAccounts))
     for j in range(len(MyAccounts)):
         print("Name", MyAccounts[j].name, MyAccounts[j].balance)
