@@ -137,8 +137,6 @@ if __name__ == '__main__':
     with open(file_to_open, 'r') as file:
         csvreader = csv.reader(file)
         for row in csvreader:
-            #print(count, row)
-            #key = input("Wait")
             if count > 0:
                 findata.append(row)
             count += 1
