@@ -116,7 +116,6 @@ if __name__ == '__main__':
     begin_saldos(findata)
     data = process_transactions(findata)
     create_bar_graph(data)
-    create_pie_chart(MyAccounts)
     BudgetBookPie()
     print("MyAccounts", len(MyAccounts))
     for j in range(len(MyAccounts)):
