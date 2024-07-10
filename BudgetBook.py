@@ -32,6 +32,11 @@ def begin_saldos(findata):
             MyAccounts.append(Account(findata[j][4], findata[j][5]))
     return 0
 
+def process_transactions(findata):
+    print("Process tranactions", len(findata))
+    data = []
+    return data
+
 def remove_decimal_num(string_decimal):
     return ''.join(string_decimal.split('.'))
 
@@ -118,6 +123,7 @@ if __name__ == '__main__':
             count += 1
     print("Length", len(findata))
     begin_saldos(findata)
+    data = process_transactions(findata)
     data = [[1,2,3,None,None,5,5,5],[1,2,3,4,5,6,7,8]]
     data.pop()
     for j in range(len(findata)):
