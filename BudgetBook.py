@@ -67,11 +67,13 @@ def create_pie_chart(MyAccounts):
     pie = Pie()
     pie.x = 150
     pie.y = 65
-    data = [10, 20, 30, 40]
-    pie._seriesCount = len(data)
-    add_legend(d, pie, data)
-    pie.data = data
-    pie.labels = [letter for letter in 'abcd']
+    pie.data = []
+    pie.labels = []
+    for obj in MyAccounts:
+        pie.data.append(obj.balance)
+        pie.labels.append(obj.name)
+    pie._seriesCount = len(pie.data)
+    add_legend(d, pie, pie.data)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     d.add(pie)
