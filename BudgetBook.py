@@ -39,22 +39,9 @@ def process_transactions(findata):
     for j in range(len(findata)):
         output_num = remove_decimal_num(findata[j][5])
         if findata[j][1] == "Transfer":
-            if findata[j][4] == "Microsoft":
-                accountsbalances[0] = accountsbalances[0] + int(output_num)
-            if findata[j][4] == "Google":
-                accountsbalances[1] = accountsbalances[1] + int(output_num)
-            if findata[j][4] == "Apple":
-                accountsbalances[2] = accountsbalances[2] + int(output_num)
-            if findata[j][4] == "Cash":
-                accountsbalances[3] = accountsbalances[3] + int(output_num)
-            if findata[j][4] == "Sjoelen":
-                accountsbalances[4] = accountsbalances[4] + int(output_num)
-            if findata[j][4] == "Strippenkaart":
-                accountsbalances[5] = accountsbalances[5] + int(output_num)
-            if findata[j][4] == "Begin Saldos":
-                accountsbalances[6] = accountsbalances[6] + int(output_num)
-            if findata[j][4] == "Frans":
-                accountsbalances[7] = accountsbalances[7] + int(output_num)
+            for i in range(len(accountnames)):
+                if findata[j][4] == accountnames[i]:
+                    accountsbalances[i] = accountsbalances[i] + int(output_num)
     data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6],accountsbalances[7]])
     return data
 
