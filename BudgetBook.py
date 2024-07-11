@@ -14,6 +14,7 @@ from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.graphics.shapes import Drawing, String
 from reportlab.lib.validators import Auto
 
+countaccounts = 7
 MyAccounts = []
 accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart','Begin Salos']
 categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Singels']
@@ -41,9 +42,13 @@ def process_transactions(findata):
     for j in range(len(findata)):
         output_num = remove_decimal_num(findata[j][5])
         if not (findata[j][1] == "Transfer" and findata[j][3] != "Begin Saldos"):
-            for i in range(len(accountnames)):
+            for i in range(countaccounts):
                 if findata[j][3] == accountnames[i]:
-                    print(j, i, findata[j][0], accountnames[i], "Desc", findata[j][2],)
+                    secondaccount = False
+                    for k in range(countaccounts):
+                        if findata[j][4] == accountnames[k]:
+                            secondaccount = True
+                    print(j, i, "2e", secondaccount, findata[j][0], accountnames[i], "Desc", findata[j][2],)
                     amount = int(output_num)
                     accountsbalances[i] = accountsbalances[i] + amount
             #print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
