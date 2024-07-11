@@ -45,7 +45,8 @@ def process_transactions(findata):
                 if findata[j][3] != "Begin Saldos":
                     if findata[j][4] == accountnames[i]:
                         print(i, findata[j][0], accountnames[i])
-                        accountsbalances[i] = accountsbalances[i] + int(output_num)
+                        amount = int(output_num)
+                        accountsbalances[i] = accountsbalances[i] + amount
     data.append(accountsbalances)
     return data
 
