@@ -40,13 +40,12 @@ def process_transactions(findata):
     data = []
     for j in range(len(findata)):
         output_num = remove_decimal_num(findata[j][5])
-        if findata[j][1] == "Transfer":
+        if not (findata[j][1] == "Transfer" and findata[j][3] != "Begin Saldos"):
             for i in range(len(accountnames)):
-                if findata[j][3] != "Begin Saldos":
-                    if findata[j][4] == accountnames[i]:
-                        print(i, findata[j][0], accountnames[i])
-                        amount = int(output_num)
-                        accountsbalances[i] = accountsbalances[i] + amount
+                if findata[j][4] == accountnames[i]:
+                    print(i, findata[j][0], accountnames[i])
+                    amount = int(output_num)
+                    accountsbalances[i] = accountsbalances[i] + amount
     data.append(accountsbalances)
     return data
 
