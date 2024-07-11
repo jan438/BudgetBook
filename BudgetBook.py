@@ -48,7 +48,7 @@ def process_transactions(findata):
                     for k in range(countaccounts):
                         if findata[j][4] == accountnames[k]:
                             secondaccount = True
-                    print(j, i, "2e", secondaccount, findata[j][0], accountnames[i], "Desc", findata[j][2],)
+                    print(j, accountnames[i], "2e", secondaccount, findata[j][0], accountnames[i], "Desc", findata[j][2],)
                     amount = int(output_num)
                     accountsbalances[i] = accountsbalances[i] + amount
             #print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
