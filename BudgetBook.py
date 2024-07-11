@@ -56,6 +56,8 @@ def process_transactions(findata):
                             secondaccount = True
                             process_tranfer(i, k, output_num)
                     if not secondaccount:
+                        if findata[j][4] == "Frans":
+                            print(findata[j][2])
                         MyAccounts[i].balance = MyAccounts[i].balance - int(output_num)
                     print(j, accountnames[i], "2e", secondaccount, findata[j][0], accountnames[i], "Desc", findata[j][2],)
         else:
