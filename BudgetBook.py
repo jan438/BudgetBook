@@ -37,7 +37,7 @@ def begin_saldos(findata):
     return 0
 
 def process_tranfer(first, second, amount):
-    print("Process Transfer", accountnames[first], accountnames[second], amount)
+    print("Process Transfer", accountnames[first], accountnames[second], amount, MyAccounts[first].name)
     return
 
 def process_transactions(findata):
