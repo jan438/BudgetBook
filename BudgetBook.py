@@ -58,7 +58,6 @@ def process_transactions(findata):
                     if not secondaccount:
                         MyAccounts[i].balance = MyAccounts[i].balance - int(output_num)
                     print(j, accountnames[i], "2e", secondaccount, findata[j][0], accountnames[i], "Desc", findata[j][2],)
-            print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
         else:
             print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
     data.append(accountsbalances)
