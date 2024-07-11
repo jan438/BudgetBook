@@ -15,9 +15,10 @@ from reportlab.graphics.shapes import Drawing, String
 from reportlab.lib.validators import Auto
 
 countaccounts = 7
+countcategories = 6
 MyAccounts = []
 accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart','Begin Salos']
-categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Singels']
+categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Kapper', 'Singels']
 endmonth = []
 
 class Account:
@@ -53,6 +54,8 @@ def process_transactions(findata):
                         if findata[j][4] == accountnames[k]:
                             secondaccount = True
                             process_tranfer(i, k, output_num)
+                    if not secondaccount:
+                        print("Category", findata[j][4] )
                     print(j, accountnames[i], "2e", secondaccount, findata[j][0], accountnames[i], "Desc", findata[j][2],)
                     amount = int(output_num)
                     accountsbalances[i] = accountsbalances[i] + amount
