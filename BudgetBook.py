@@ -46,7 +46,7 @@ def process_transactions(findata):
                     if findata[j][4] == accountnames[i]:
                         print(i, findata[j][0], accountnames[i])
                         accountsbalances[i] = accountsbalances[i] + int(output_num)
-    data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6]])
+    data.append(accountsbalances)
     return data
 
 def remove_decimal_num(string_decimal):
