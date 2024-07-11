@@ -42,9 +42,10 @@ def process_transactions(findata):
         output_num = remove_decimal_num(findata[j][5])
         if findata[j][1] == "Transfer":
             for i in range(len(accountnames)):
-                if findata[j][4] == accountnames[i]:
-                    print(i, accountnames[i])
-                    accountsbalances[i] = accountsbalances[i] + int(output_num)
+                if findata[j][3] != "Begin Saldos":
+                    if findata[j][4] == accountnames[i]:
+                        print(i, accountnames[i])
+                        accountsbalances[i] = accountsbalances[i] + int(output_num)
     data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6]])
     return data
 
