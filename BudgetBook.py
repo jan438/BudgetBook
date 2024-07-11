@@ -15,7 +15,7 @@ from reportlab.graphics.shapes import Drawing, String
 from reportlab.lib.validators import Auto
 
 MyAccounts = []
-accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart','Begin Salos', 'Frans' ]
+accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart','Begin Salos']
 categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Singels']
 endmonth = []
 
@@ -36,7 +36,7 @@ def begin_saldos(findata):
 
 def process_transactions(findata):
     print("Process tranactions", len(findata))
-    accountsbalances = [0,0,0,0,0,0,0,0]
+    accountsbalances = [0,0,0,0,0,0,0]
     data = []
     for j in range(len(findata)):
         output_num = remove_decimal_num(findata[j][5])
@@ -44,7 +44,7 @@ def process_transactions(findata):
             for i in range(len(accountnames)):
                 if findata[j][4] == accountnames[i]:
                     accountsbalances[i] = accountsbalances[i] + int(output_num)
-    data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6],accountsbalances[7]])
+    data.append([accountsbalances[0],accountsbalances[1],accountsbalances[2],accountsbalances[3],accountsbalances[4],accountsbalances[5],accountsbalances[6]])
     return data
 
 def remove_decimal_num(string_decimal):
