@@ -17,7 +17,7 @@ from reportlab.lib.validators import Auto
 MyAccounts = []
 accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Sjoelen', 'Strippenkaart','Begin Salos', 'Frans' ]
 categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Singels']
-endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+endmonth = []
 
 class Account:
     def __init__(self, name, balance, endmonth):
@@ -29,6 +29,7 @@ def begin_saldos(findata):
     print("Begin saldos", len(findata))
     for j in range(len(findata)):
         if findata[j][1] == "Transfer" and findata[j][3] == "Begin Saldos":
+            endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             print(j, findata[j], len(endmonth))
             MyAccounts.append(Account(findata[j][4], findata[j][5], endmonth))
     return 0
