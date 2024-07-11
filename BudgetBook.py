@@ -43,10 +43,12 @@ def process_transactions(findata):
         if not (findata[j][1] == "Transfer" and findata[j][3] != "Begin Saldos"):
             for i in range(len(accountnames)):
                 if findata[j][4] == accountnames[i]:
-                    print(i, findata[j][0], accountnames[i])
+                    #print(i, findata[j][0], accountnames[i])
                     amount = int(output_num)
                     accountsbalances[i] = accountsbalances[i] + amount
-        print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
+            print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
+        else:
+            print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
     data.append(accountsbalances)
     return data
 
