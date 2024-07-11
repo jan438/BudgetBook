@@ -35,6 +35,10 @@ def begin_saldos(findata):
             MyAccounts.append(Account(findata[j][4], findata[j][5], endmonth))
     return 0
 
+def process_tranfer(first, second, amount):
+    print("Process Transfer", accountnames[first], accountnames[second], amount)
+    return
+
 def process_transactions(findata):
     print("Process tranactions", len(findata))
     accountsbalances = [0,0,0,0,0,0,0]
@@ -48,6 +52,7 @@ def process_transactions(findata):
                     for k in range(countaccounts):
                         if findata[j][4] == accountnames[k]:
                             secondaccount = True
+                            process_tranfer(i, k, output_num)
                     print(j, accountnames[i], "2e", secondaccount, findata[j][0], accountnames[i], "Desc", findata[j][2],)
                     amount = int(output_num)
                     accountsbalances[i] = accountsbalances[i] + amount
