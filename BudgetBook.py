@@ -48,7 +48,10 @@ def process_transactions(findata, dayyear):
     data = []
     for j in range(len(findata)):
         bookdate = findata[j][0]
-        print("Book date", bookdate)
+        bookday = bookdate[:2]
+        bookmonth = bookdate[3:5]
+        bookyear = bookdate[6:10]
+        print("Book date", bookdate, bookday,bookmonth, bookyear)
         output_num = remove_decimal_num(findata[j][5])
         if not (findata[j][1] == "Transfer" and findata[j][3] != "Begin Saldos"):
             for i in range(countaccounts):
