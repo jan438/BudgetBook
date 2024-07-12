@@ -42,8 +42,8 @@ def process_tranfer(first, second, amount):
     MyAccounts[second].balance = MyAccounts[second].balance + int(amount)
     return
 
-def process_transactions(findata):
-    print("Process tranactions", len(findata))
+def process_transactions(findata, dayyear):
+    print("Process tranactions", len(findata), dayyear)
     accountsbalances = [0,0,0,0,0,0,0]
     data = []
     for j in range(len(findata)):
@@ -156,7 +156,7 @@ if __name__ == '__main__':
     day = 31
     bookday = datetime(year, month, day)
     dayyear = bookday.timetuple().tm_yday
-    data = process_transactions(findata)
+    data = process_transactions(findata, dayyear)
     BudgetBookBar(data)
     BudgetBookPie(MyAccounts)
     print("MyAccounts", len(MyAccounts))
