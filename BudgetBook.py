@@ -154,8 +154,8 @@ if __name__ == '__main__':
     year = 2023
     month = 12
     day = 31
-    eventday = datetime(year, month, day)
-    #dayyear = eventday.timetuple().tm_yday
+    bookday = datetime(year, month, day)
+    dayyear = bookday.timetuple().tm_yday
     data = process_transactions(findata)
     BudgetBookBar(data)
     BudgetBookPie(MyAccounts)
