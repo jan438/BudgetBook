@@ -150,6 +150,8 @@ if __name__ == '__main__':
             count += 1
     print("Length", len(findata))
     begin_saldos(findata)
+    #eventday = datetime(year, month, day)
+    #dayyear = eventday.timetuple().tm_yday
     data = process_transactions(findata)
     BudgetBookBar(data)
     BudgetBookPie(MyAccounts)
