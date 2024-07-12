@@ -37,8 +37,8 @@ def begin_saldos(findata):
     return 0
 
 def process_tranfer(first, second, amount):
-    MyAccounts[first].balance = MyAccounts[first].balance + int(amount)
-    MyAccounts[second].balance = MyAccounts[second].balance - int(amount)
+    MyAccounts[first].balance = MyAccounts[first].balance - int(amount)
+    MyAccounts[second].balance = MyAccounts[second].balance + int(amount)
     return
 
 def process_transactions(findata):
