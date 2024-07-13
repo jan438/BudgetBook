@@ -69,21 +69,19 @@ def process_transactions(findata, d):
         bookyear = int(bookdate[6:10])
         if bookyear <= endyear and bookmonth <= endmonth and bookday <= endday:
             output_num = remove_decimal_num(findata[j][5])
-            if not (findata[j][1] == "Transfer" and findata[j][3] != "Begin Saldos"):
-                for i in range(countaccounts):
-                    if findata[j][3] == accountnames[i]:
-                        secondaccount = False
-                        for k in range(countaccounts):
-                            if findata[j][4] == accountnames[k]:
-                                secondaccount = True
-                                process_tranfer(i, k, output_num)
-                        if not secondaccount:
-                            if findata[j][4] == "Frans":
-                                print("Frans", j, findata[j][0], findata[j][2], findata[j][3], findata[j][4],)
-                                MyAccounts[i].balance = MyAccounts[i].balance + int(output_num)
-                                break
-                            #MyAccounts[i].balance = MyAccounts[i].balance - int(output_num)
             print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
+            for i in range(countaccounts):
+                if findata[j][3] == accountnames[i]:
+                    secondaccount = False
+                    for k in range(countaccounts):
+                        if findata[j][4] == accountnames[k]:
+                            secondaccount = True
+                            process_tranfer(i, k, output_num)
+                    if not secondaccount:
+                        if findata[j][4] == "Frans":
+                            print("Frans", j, findata[j][0], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
+                            MyAccounts[i].balance = MyAccounts[i].balance + int(output_num)
+                            break
     data.append(accountsbalances)
     return data
 
