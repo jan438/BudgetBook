@@ -175,7 +175,5 @@ if __name__ == '__main__':
     data = process_transactions(findata, d)
     BudgetBookBar(data)
     BudgetBookPie(MyAccounts)
-    print("MyAccounts", len(MyAccounts))
-    for j in range(len(MyAccounts)):
-        print("Name", MyAccounts[j].name, MyAccounts[j].balance)
+    print_myaccounts()
     key = input("Wait")
