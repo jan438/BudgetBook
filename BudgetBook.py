@@ -73,18 +73,20 @@ def process_transactions(findata, d):
         bookyear = int(bookdate[6:10])
         if bookyear <= endyear and bookmonth <= endmonth and bookday <= endday:
             output_num = remove_decimal_num(findata[j][5])
-            print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
+            #print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
             for i in range(countaccounts):
                 if findata[j][3] == accountnames[i]:
+                    firstaccount = i
                     secondaccount = False
                     for k in range(countaccounts):
                         if findata[j][4] == accountnames[k]:
                             secondaccount = True
                     if not secondaccount:
                         if findata[j][4] == "Frans":
-                            print("Frans", j, findata[j][0], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
+                            print("Frans", j, findata[j][0], findata[j][2], findata[j][3], findata[j][4], findata[j][5], MyAccounts[firstaccount].name)
                             MyAccounts[i].balance = MyAccounts[i].balance + int(output_num)
                             break
+            #print_myaccounts()
     data.append(accountsbalances)
     return data
 
