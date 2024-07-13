@@ -62,7 +62,6 @@ def process_transactions(findata, d):
         bookday = bookdate[:2]
         bookmonth = bookdate[3:5]
         bookyear = bookdate[6:10]
-        print("Book date", bookdate, bookday,bookmonth, bookyear)
         output_num = remove_decimal_num(findata[j][5])
         if not (findata[j][1] == "Transfer" and findata[j][3] != "Begin Saldos"):
             for i in range(countaccounts):
@@ -78,7 +77,7 @@ def process_transactions(findata, d):
                             MyAccounts[i].balance = MyAccounts[i].balance + int(output_num)
                             break
                         MyAccounts[i].balance = MyAccounts[i].balance - int(output_num)
-                    print(j, accountnames[i], "2e", secondaccount, findata[j][0], accountnames[i], "Desc", findata[j][2],)
+                    #print(j, accountnames[i], "2e", secondaccount, findata[j][0], accountnames[i], "Desc", findata[j][2],)
         else:
             print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
     data.append(accountsbalances)
