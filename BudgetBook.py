@@ -75,13 +75,13 @@ def process_transactions(findata, d):
             output_num = remove_decimal_num(findata[j][5])
             firstaccount = -1
             firstname = ""
-            for i in range(countaccounts):
-                if findata[j][3] == accountnames[i]:
+            for i in range(len(MyAccounts)):
+                if findata[j][3] == MyAccounts[i].name:
                     firstaccount = i
                     firstname = MyAccounts[i].name
                     secondaccount = False
-            for k in range(countaccounts):
-                if findata[j][4] == accountnames[k]:
+            for k in range(len(MyAccounts)):
+                if findata[j][4] == MyAccounts[k].name:
                     secondaccount = True
             if not secondaccount:
                 if findata[j][4] == "Frans":
