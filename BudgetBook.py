@@ -56,9 +56,11 @@ def process_tranfer(first, second, amount):
 def process_transactions(findata, d):
     print("Process tranactions", len(findata))
     delta = date_from_days(d)
-    start = delta.strftime('%Y-%m-%d')
-    endyear = start[:4]
-    print("Delta", delta, start, endyear)
+    enddate = delta.strftime('%Y-%m-%d')
+    endyear = enddate[:4]
+    endmonth = enddate[5:7]
+    endday = enddate[8:10]
+    print("Delta", endyear, endmonth, endday)
     accountsbalances = [0,0,0,0,0,0,0]
     data = []
     for j in range(len(findata)):
