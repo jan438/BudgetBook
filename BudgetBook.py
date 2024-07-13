@@ -82,7 +82,7 @@ def process_transactions(findata, d):
                                 print("Frans", j, findata[j][0], findata[j][2], findata[j][3], findata[j][4],)
                                 MyAccounts[i].balance = MyAccounts[i].balance + int(output_num)
                                 break
-                            MyAccounts[i].balance = MyAccounts[i].balance - int(output_num)
+                            #MyAccounts[i].balance = MyAccounts[i].balance - int(output_num)
             print(j, findata[j][0], findata[j][1],findata[j][2],findata[j][3],findata[j][4], findata[j][5])
     data.append(accountsbalances)
     return data
