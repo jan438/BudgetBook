@@ -76,7 +76,6 @@ def process_transactions(findata, d):
                     for k in range(countaccounts):
                         if findata[j][4] == accountnames[k]:
                             secondaccount = True
-                            #process_tranfer(i, k, output_num)
                     if not secondaccount:
                         if findata[j][4] == "Frans":
                             print("Frans", j, findata[j][0], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
