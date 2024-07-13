@@ -40,12 +40,12 @@ def date_from_days(days):
     return offset
 
 def begin_saldos(findata):
-    print("Begin saldos", len(findata))
     for j in range(len(findata)):
         if findata[j][1] == "Transfer" and findata[j][3] == "Begin Saldos":
             endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            print(j, findata[j], len(endmonth))
             MyAccounts.append(Account(findata[j][4], findata[j][5], endmonth))
+    for j in range(len(MyAccounts)):
+        print("Begin my accounts", MyAccounts[j].name, str(MyAccounts[j].balance))
     return 0
 
 def process_tranfer(first, second, amount):
@@ -76,7 +76,7 @@ def process_transactions(findata, d):
                     for k in range(countaccounts):
                         if findata[j][4] == accountnames[k]:
                             secondaccount = True
-                            process_tranfer(i, k, output_num)
+                            #process_tranfer(i, k, output_num)
                     if not secondaccount:
                         if findata[j][4] == "Frans":
                             print("Frans", j, findata[j][0], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
