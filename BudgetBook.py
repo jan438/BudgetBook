@@ -29,6 +29,11 @@ class Account:
         self.balance = int(remove_decimal_num(balance))
         self.endmonth = endmonth
 
+def days_since_1990(year, month, day):          
+    d = date(year, month, day)
+    delta = d - startdate
+    return delta.days
+
 def begin_saldos(findata):
     print("Begin saldos", len(findata))
     for j in range(len(findata)):
@@ -157,6 +162,7 @@ if __name__ == '__main__':
             count += 1
     print("Length", len(findata))
     begin_saldos(findata)
+    print("Day 1990", days_since_1990(2023, 12, 31))
     year = 2023
     month = 12
     day = 31
