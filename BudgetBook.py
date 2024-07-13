@@ -54,7 +54,9 @@ def process_tranfer(first, second, amount):
     return
 
 def process_transactions(findata, d):
-    print("Process tranactions", len(findata), d, date_from_days(d))
+    print("Process tranactions", len(findata))
+    delta = date_from_days(d)
+    print("Delta", delta)
     accountsbalances = [0,0,0,0,0,0,0]
     data = []
     for j in range(len(findata)):
