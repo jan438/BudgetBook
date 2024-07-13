@@ -34,6 +34,11 @@ def days_since_1990(year, month, day):
     delta = d - startdate
     return delta.days
 
+def date_from_days(days): 
+    delta = timedelta(days)    
+    offset = startdate + delta               
+    return offset
+
 def begin_saldos(findata):
     print("Begin saldos", len(findata))
     for j in range(len(findata)):
@@ -49,7 +54,7 @@ def process_tranfer(first, second, amount):
     return
 
 def process_transactions(findata, d):
-    print("Process tranactions", len(findata), d)
+    print("Process tranactions", len(findata), d, date_from_days(d))
     accountsbalances = [0,0,0,0,0,0,0]
     data = []
     for j in range(len(findata)):
