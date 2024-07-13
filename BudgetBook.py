@@ -57,7 +57,8 @@ def process_transactions(findata, d):
     print("Process tranactions", len(findata))
     delta = date_from_days(d)
     start = delta.strftime('%Y-%m-%d')
-    print("Delta", delta, start)
+    endyear = start[:4]
+    print("Delta", delta, start, endyear)
     accountsbalances = [0,0,0,0,0,0,0]
     data = []
     for j in range(len(findata)):
