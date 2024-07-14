@@ -50,11 +50,6 @@ def begin_saldos(findata):
             endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             MyAccounts.append(Account(findata[j][4], findata[j][5], endmonth))
     print_myaccounts()
-    return 0
-
-def process_tranfer(first, second, amount):
-    MyAccounts[first].balance = MyAccounts[first].balance - int(amount)
-    MyAccounts[second].balance = MyAccounts[second].balance + int(amount)
     return
 
 def process_transactions(findata, d):
