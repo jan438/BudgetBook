@@ -97,12 +97,12 @@ def create_bar_graph(MyAccounts):
     bar.y = 85
     bar.width = 475
     accountsbalances = []
+    bar.categoryAxis.categoryNames = []
     for j in range(len(MyAccounts)):
         accountsbalances.append(MyAccounts[j].balance)
     data = []
     data.append(accountsbalances)
     bar.data = data
-    bar.categoryAxis.categoryNames = []
     for j in range(len(MyAccounts)):
         bar.categoryAxis.categoryNames.append(MyAccounts[j].name)
     bar.bars[0].fillColor   = PCMYKColor(0,100,100,40,alpha=85)
