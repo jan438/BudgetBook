@@ -90,7 +90,7 @@ def process_transactions(findata, d):
 def remove_decimal_num(string_decimal):
     return ''.join(string_decimal.split('.'))
 
-def create_bar_graph(MyAccounts):
+def create_bar_graph(data):
     d = Drawing()
     bar = VerticalBarChart()
     bar.x = 50
@@ -98,9 +98,9 @@ def create_bar_graph(MyAccounts):
     bar.width = 475
     accountsbalances = []
     bar.categoryAxis.categoryNames = []
-    for j in range(len(MyAccounts)):
-        accountsbalances.append(MyAccounts[j].balance)
-        bar.categoryAxis.categoryNames.append(MyAccounts[j].name)
+    for j in range(len(data)):
+        accountsbalances.append(data[j].balance)
+        bar.categoryAxis.categoryNames.append(data[j].name)
     bar.data = []
     bar.data.append(accountsbalances)
     bar.bars[0].fillColor   = PCMYKColor(0,100,100,40,alpha=85)
