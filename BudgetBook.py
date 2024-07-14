@@ -86,6 +86,8 @@ def process_transactions(findata, d):
             if not secondaccount:
                 if findata[j][4] == "Frans":
                     MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + int(output_num)
+                else:
+                    MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance - int(output_num)
             #print_myaccounts()
             print(j, findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
     data.append(accountsbalances)
