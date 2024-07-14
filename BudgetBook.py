@@ -66,12 +66,10 @@ def process_transactions(findata, d):
         if bookyear <= endyear and bookmonth <= endmonth and bookday <= endday:
             output_num = remove_decimal_num(findata[j][5])
             firstaccount = -1
-            firstname = ""
             secondaccount = -1
             for i in range(len(MyAccounts)):
                 if findata[j][3] == MyAccounts[i].name:
                     firstaccount = i
-                    firstname = MyAccounts[i].name
                     second = False
             for k in range(len(MyAccounts)):
                 if findata[j][4] == MyAccounts[k].name:
