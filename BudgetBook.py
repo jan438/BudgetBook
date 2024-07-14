@@ -96,6 +96,11 @@ def create_bar_graph(MyAccounts):
     bar.x = 50
     bar.y = 85
     bar.width = 475
+    accountsbalances = []
+    for j in range(len(MyAccounts)):
+        accountsbalances.append(MyAccounts[j].balance)
+    data = []
+    data.append(accountsbalances)
     bar.data = data
     bar.categoryAxis.categoryNames = []
     for j in range(len(MyAccounts)):
@@ -174,11 +179,6 @@ if __name__ == '__main__':
     begin_saldos(findata)
     d = days_since_1990(2023, 12, 31)
     process_transactions(findata, d)
-    accountsbalances = []
-    for j in range(len(MyAccounts)):
-        accountsbalances.append(MyAccounts[j].balance)
-    data = []
-    data.append(accountsbalances)
     BudgetBookBar(MyAccounts)
     BudgetBookPie(MyAccounts)
     print_myaccounts()
