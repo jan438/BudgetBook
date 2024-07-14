@@ -18,7 +18,6 @@ from reportlab.lib.validators import Auto
 countaccounts = 7
 countcategories = 6
 MyAccounts = []
-accountnames = ['Microsoft', 'Google', 'Apple','Cash', 'Strippenkaart Spel', 'Strippenkaart','Begin Salos']
 categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Kapper', 'Singels']
 endmonth = []
 startdate = date(1990,1,1)
