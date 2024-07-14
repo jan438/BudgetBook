@@ -91,14 +91,16 @@ def process_transactions(findata, d):
 def remove_decimal_num(string_decimal):
     return ''.join(string_decimal.split('.'))
 
-def create_bar_graph(data):
+def create_bar_graph(MyAccounts):
     d = Drawing()
     bar = VerticalBarChart()
     bar.x = 50
     bar.y = 85
     bar.width = 475
     bar.data = data
-    bar.categoryAxis.categoryNames = accountnames
+    bar.categoryAxis.categoryNames = []
+    for j in range(len(MyAccounts)):
+        bar.categoryAxis.categoryNames.append(MyAccounts[j].name)
     bar.bars[0].fillColor   = PCMYKColor(0,100,100,40,alpha=85)
     bar.bars[1].fillColor   = PCMYKColor(23,51,0,4,alpha=85)
     bar.bars.fillColor       = PCMYKColor(100,0,90,50,alpha=85)
@@ -178,7 +180,7 @@ if __name__ == '__main__':
         accountsbalances.append(MyAccounts[j].balance)
     data = []
     data.append(accountsbalances)
-    BudgetBookBar(data)
+    BudgetBookBar(MyAccounts)
     BudgetBookPie(MyAccounts)
     print_myaccounts()
     key = input("Wait")
