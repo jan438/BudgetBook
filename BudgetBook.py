@@ -106,14 +106,14 @@ def create_bar_graph(MyAccounts):
     d.add(bar, '')
     return d
 
-def create_pie_chart():
+def create_pie_chart(data):
     d = Drawing()
     pie = Pie()
     pie.x = 150
     pie.y = 65
     pie.data = []
     pie.labels = []
-    for obj in MyAccounts:
+    for obj in data:
         pie.data.append(obj.balance)
         pie.labels.append(obj.name)
     pie._seriesCount = len(pie.data)
@@ -144,13 +144,13 @@ def BudgetBookBar(data):
     doc.build(elements)
     return 0
 
-def BudgetBookPie():
+def BudgetBookPie(data):
     doc = SimpleDocTemplate('flowable_with_piechart.pdf')
     elements = []
     styles = getSampleStyleSheet()
     ptext = Paragraph('Text before the chart', styles["Normal"])
     elements.append(ptext)
-    chart = create_pie_chart()
+    chart = create_pie_chart(data)
     elements.append(chart)
     ptext = Paragraph('Text after the chart', styles["Normal"])
     elements.append(ptext)
@@ -180,6 +180,6 @@ if __name__ == '__main__':
     data = []
     data.append(accountsbalances)
     BudgetBookBar(MyAccounts)
-    BudgetBookPie()
+    BudgetBookPie(MyAccounts)
     print_myaccounts()
     key = input("Wait")
