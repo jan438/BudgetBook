@@ -64,8 +64,6 @@ def process_transactions(findata, d):
     endyear = int(enddate[:4])
     endmonth = int(enddate[5:7])
     endday = int(enddate[8:10])
-    accountsbalances = [0,0,0,0,0,0,0]
-    data = []
     for j in range(len(findata)):
         bookdate = findata[j][0]
         bookday = int(bookdate[:2])
@@ -90,6 +88,10 @@ def process_transactions(findata, d):
                     MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance - int(output_num)
             #print_myaccounts()
             print(j, findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
+    accountsbalances = []
+    for j in range(len(MyAccounts)):
+        accountsbalances.append(MyAccounts[j].balance)
+    data = []
     data.append(accountsbalances)
     return data
 
