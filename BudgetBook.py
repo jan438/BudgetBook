@@ -98,9 +98,9 @@ def create_bar_graph(data):
     bar.width = 475
     accountsbalances = []
     bar.categoryAxis.categoryNames = []
-    for j in range(len(data)):
-        accountsbalances.append(data[j].balance)
-        bar.categoryAxis.categoryNames.append(data[j].name)
+    for obj in data:
+        accountsbalances.append(obj.balance)
+        bar.categoryAxis.categoryNames.append(obj.name)
     bar.data = []
     bar.data.append(accountsbalances)
     bar.bars[0].fillColor   = PCMYKColor(0,100,100,40,alpha=85)
