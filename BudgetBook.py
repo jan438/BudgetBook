@@ -86,12 +86,7 @@ def process_transactions(findata, d):
                 MyAccounts[secondaccount].balance = MyAccounts[secondaccount].balance +  int(output_num)   
             #print_myaccounts()
             print(j, findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
-    accountsbalances = []
-    for j in range(len(MyAccounts)):
-        accountsbalances.append(MyAccounts[j].balance)
-    data = []
-    data.append(accountsbalances)
-    return data
+    return
 
 def remove_decimal_num(string_decimal):
     return ''.join(string_decimal.split('.'))
@@ -177,7 +172,12 @@ if __name__ == '__main__':
     print("Length", len(findata))
     begin_saldos(findata)
     d = days_since_1990(2023, 12, 31)
-    data = process_transactions(findata, d)
+    process_transactions(findata, d)
+    accountsbalances = []
+    for j in range(len(MyAccounts)):
+        accountsbalances.append(MyAccounts[j].balance)
+    data = []
+    data.append(accountsbalances)
     BudgetBookBar(data)
     BudgetBookPie(MyAccounts)
     print_myaccounts()
