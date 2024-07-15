@@ -15,7 +15,6 @@ from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.graphics.shapes import Drawing, String
 from reportlab.lib.validators import Auto
 
-countaccounts = 7
 countcategories = 6
 MyAccounts = []
 categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Kapper', 'Singels']
