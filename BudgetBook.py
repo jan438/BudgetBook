@@ -65,22 +65,21 @@ def process_transactions(findata, d):
         bookyear = int(bookdate[6:10])
         if bookyear <= endyear and bookmonth <= endmonth and bookday <= endday and findata[j][3] != "Begin Saldos":
             output_num = remove_decimal_num(findata[j][5])
-            firstaccount = -1
-            secondaccount = -1
+            first = False
+            second = False
             for i in range(len(MyAccounts)):
                 if findata[j][3] == MyAccounts[i].name:
                     firstaccount = i
-                    second = False
-            for k in range(len(MyAccounts)):
-                if findata[j][4] == MyAccounts[k].name:
-                    secondaccount = k
+                    first = True
+                if findata[j][4] == MyAccounts[i].name:
+                    secondaccount = i
                     second = True
-            if not second:
+            if first and not second:
                 if findata[j][4] == "Frans":
                     MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + int(output_num)
                 else:
                     MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance - int(output_num)
-            else:
+            if first and second:
                 MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance -  int(output_num)      
                 MyAccounts[secondaccount].balance = MyAccounts[secondaccount].balance +  int(output_num)   
             #print_myaccounts()
