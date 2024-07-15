@@ -52,12 +52,12 @@ def begin_saldos(findata):
     return
 
 def process_transactions(findata, d):
-    print("Process tranactions", len(findata))
     delta = date_from_days(d)
     enddate = delta.strftime('%Y-%m-%d')
     endyear = int(enddate[:4])
     endmonth = int(enddate[5:7])
     endday = int(enddate[8:10])
+    print("Process tranactions", len(findata), d)
     for j in range(len(findata)):
         bookdate = findata[j][0]
         bookday = int(bookdate[:2])
