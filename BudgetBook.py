@@ -67,7 +67,7 @@ def process_transactions(findata, d):
         try:
             bd = days_since_1990(bookyear, bookmonth, bookday)
         except ValueError:
-            print("ValueError") 
+            print("ValueError", findata[j][0], findata[j][2]) 
         print(str(bookmonth), bookdate[3:4], bookdate[4:5], bookdate, findata[j][2])
         if bookyear <= endyear and bookmonth <= endmonth and bookday <= endday and findata[j][3] != "Begin Saldos":
             output_num = remove_decimal_num(findata[j][5])
