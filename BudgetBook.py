@@ -126,6 +126,12 @@ def create_pie_chart(data):
     add_legend(d, pie, pie.data)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
+    pie.slices[0].fillColor = blue
+    pie.slices[1].fillColor = green
+    pie.slices[2].fillColor = brown
+    pie.slices[3].fillColor = yellow
+    pie.slices[4].fillColor = red
+    pie.slices[5].fillColor = purple
     d.add(pie)
     return d
 
