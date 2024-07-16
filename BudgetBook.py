@@ -8,7 +8,7 @@ from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import Paragraph,SimpleDocTemplate
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.graphics.charts.piecharts import Pie
-from reportlab.lib.colors import brown,blue, PCMYKColor, black
+from reportlab.lib.colors import brown,blue, PCMYKColor, black, green, red, yellow, purple
 from reportlab.graphics.charts.legends import Legend
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics.charts.barcharts import VerticalBarChart
