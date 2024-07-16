@@ -61,7 +61,6 @@ def process_transactions(findata, d):
         bookday = int(bookdate[:2])
         bookmonth = int(bookdate[3:5])
         bookyear = int(bookdate[6:10])
-        tempmonth = int(bookdate[4:5])
         try:
             bd = days_since_1990(bookyear, bookmonth, bookday)
         except ValueError:
