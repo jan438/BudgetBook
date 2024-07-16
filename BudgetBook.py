@@ -94,8 +94,9 @@ def create_bar_graph(data):
     d = Drawing()
     bar = VerticalBarChart()
     bar.x = 50
-    bar.y = 85
-    bar.width = 475
+    bar.y = 30
+    bar.width = 300
+    bar.height = 150
     accountsbalances = []
     bar.categoryAxis.categoryNames = []
     for obj in data:
@@ -115,8 +116,10 @@ def create_bar_graph(data):
 def create_pie_chart(data):
     d = Drawing()
     pie = Pie()
-    pie.x = 150
-    pie.y = 65
+    pie.x = 225
+    pie.y = 0
+    pie.width = 250
+    pie.height = 150
     pie.data = []
     pie.labels = []
     for obj in data:
