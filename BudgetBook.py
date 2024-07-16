@@ -103,9 +103,7 @@ def create_bar_graph(data):
         bar.categoryAxis.categoryNames.append(obj.name)
     bar.data = []
     bar.data.append(accountsbalances)
-    bar.bars[0].fillColor   = PCMYKColor(0,100,100,40,alpha=85)
-    bar.bars[1].fillColor   = PCMYKColor(23,51,0,4,alpha=85)
-    bar.bars.fillColor       = PCMYKColor(100,0,90,50,alpha=85)
+    bar.bars[0].fillColor       = blue
     d.add(bar, '')
     return d
 
