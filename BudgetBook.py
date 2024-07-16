@@ -106,6 +106,9 @@ def create_bar_graph(data):
     bar.bars[0, 0].fillColor = blue
     bar.bars[0, 1].fillColor = green
     bar.bars[0, 2].fillColor = brown
+    bar.bars[0, 3].fillColor = yellow
+    bar.bars[0, 4].fillColor = red
+    bar.bars[0, 5].fillColor = purple
     d.add(bar, '')
     return d
 
