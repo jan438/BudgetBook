@@ -175,7 +175,7 @@ def BudgetBookPie(data):
 if __name__ == '__main__':
     path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/Data"
     os.chdir(path)
-    file_to_open = "BTRecords.csv"
+    file_to_open = "OurBudgetBook.csv"
     count = 0
     som = 0
     findata = []
@@ -186,10 +186,10 @@ if __name__ == '__main__':
                 findata.append(row)
             count += 1
     print("Length", len(findata))
-    begin_saldos(findata)
-    d = days_since_1990(2023, 12, 31)
-    process_transactions(findata, d)
-    BudgetBookBar(MyAccounts)
-    BudgetBookPie(MyAccounts)
-    print_myaccounts()
+    #begin_saldos(findata)
+    #d = days_since_1990(2023, 12, 31)
+    #process_transactions(findata, d)
+    #BudgetBookBar(MyAccounts)
+    #BudgetBookPie(MyAccounts)
+    #print_myaccounts()
     key = input("Wait")
