@@ -1,7 +1,1 @@
-"Date","Type","Description","Account1","AccCat","Sum"
-"24-12-2023","Transfer","Begin Saldo","Begin Saldos","Microsoft","0.09"
-"24-12-2023","Transfer","Begin Saldo","Begin Saldos","Apple","0.07"
-"24-12-2023","Transfer","Begin Saldo","Begin Saldos","Google","0.00"
-"25-12-2023","Transfer","Begin Saldo","Begin Saldos","Cash","10.75"
-"31-12-2023","Transaction","Cadeaubon","Google","Frans","25.00"
-"31-12-2023","Transaction","Cadeaubon","Apple","Frans","15.00"
+"Type";"Omschrijving";"Datum";"Bedrag";"Account";"Persoon";"No Ads";
