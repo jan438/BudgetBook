@@ -57,8 +57,8 @@ def process_transfers(findata):
         if findata[j][0] == "Transfer" and findata[j][4][:12] != "Begin Saldos":
             account1 = findata[j][4][:4]
             account2 = findata[j][4][9:]
-            amount = findata[j][3]
-            print(account1, account2, amount)
+            amount = int(remove_decimal_marker(findata[j][3]))
+            print(account1, account2, str(amount))
             processed.append(findata[j])
     print_myaccounts(1)
     return
