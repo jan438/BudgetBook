@@ -23,7 +23,7 @@ startdate = date(1990,1,1)
 class Account:
     def __init__(self, name, balance, endmonth):
         self.name = name
-        self.balance = int(remove_decimal_num(balance))
+        self.balance = int(remove_decimal_marker(balance))
         self.endmonth = endmonth
 
 def print_myaccounts():
@@ -90,7 +90,7 @@ def process_transactions(findata, d):
             print(j, findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
     return
 
-def remove_decimal_num(string_decimal):
+def remove_decimal_marker(string_decimal):
     return ''.join(string_decimal.split(','))
 
 def create_bar_graph(data):
