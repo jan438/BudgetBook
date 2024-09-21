@@ -18,6 +18,7 @@ from reportlab.lib.validators import Auto
 MyAccounts = []
 categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Kapper', 'Singels']
 endmonth = []
+processed = []
 startdate = date(1990,1,1)
 
 class Account:
@@ -47,13 +48,14 @@ def begin_saldos(findata):
             account = findata[j][4][17:]
             endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             MyAccounts.append(Account(account, findata[j][3], endmonth))
+            processed.append(findata[j])
     print_myaccounts()
     return
 
 def process_transfers(findata):
     for j in range(len(findata)):
         if findata[j][0] == "Transfer" and findata[j][4][:12] != "Begin Saldos":
-            print(j, findata[j])
+            processed.append(findata[j])
     return
 
 def process_transactions(findata, d):
@@ -197,6 +199,7 @@ if __name__ == '__main__':
     process_transfers(findata)
     #d = days_since_1990(2023, 12, 31)
     #process_transactions(findata, d)
+    print("Count processed", len(processed))
     #BudgetBookBar(MyAccounts)
     #BudgetBookPie(MyAccounts)
     #print_myaccounts()
