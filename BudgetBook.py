@@ -66,6 +66,8 @@ def process_transfers(findata):
             for i in range(len(MyAccounts)):
                 if account2 == MyAccounts[i].name:
                     secondaccount = i
+            MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance - amount
+            MyAccounts[secondaccount].balance = MyAccounts[secondaccount].balance + amount
             print(account1, firstaccount, account2, secondaccount, str(amount))
             processed.append(findata[j])
     print_myaccounts(1)
