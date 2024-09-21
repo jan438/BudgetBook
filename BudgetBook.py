@@ -44,8 +44,8 @@ def date_from_days(days):
 def begin_saldos(findata):
     for j in range(len(findata)):
         #print(j,findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5], findata[j][6])
-        if findata[j][0] == "Transfer" and findata[j][1] == "Begin Saldo":
-            print(j,findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5], findata[j][6])
+        if findata[j][0] == "Transfer":
+            print(j,findata[j][0], findata[j][4])
             #endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             #MyAccounts.append(Account(findata[j][4], findata[j][5], endmonth))
     #print_myaccounts()
