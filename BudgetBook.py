@@ -43,10 +43,11 @@ def date_from_days(days):
 
 def begin_saldos(findata):
     for j in range(len(findata)):
-        if findata[j][1] == "Transfer" and findata[j][3] == "Begin Saldos":
-            endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            MyAccounts.append(Account(findata[j][4], findata[j][5], endmonth))
-    print_myaccounts()
+        print(j,findata[j][0])
+        #if findata[j][1] == "Transfer" and findata[j][3] == "Begin Saldos":
+            #endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            #MyAccounts.append(Account(findata[j][4], findata[j][5], endmonth))
+    #print_myaccounts()
     return
 
 def process_transactions(findata, d):
@@ -180,13 +181,13 @@ if __name__ == '__main__':
     som = 0
     findata = []
     with open(file_to_open, 'r') as file:
-        csvreader = csv.reader(file)
+        csvreader = csv.reader(file, delimiter = ';')
         for row in csvreader:
             if count > 0:
                 findata.append(row)
             count += 1
     print("Length", len(findata))
-    #begin_saldos(findata)
+    begin_saldos(findata)
     #d = days_since_1990(2023, 12, 31)
     #process_transactions(findata, d)
     #BudgetBookBar(MyAccounts)
