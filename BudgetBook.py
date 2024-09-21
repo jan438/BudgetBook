@@ -50,6 +50,12 @@ def begin_saldos(findata):
     print_myaccounts()
     return
 
+def process_transfers(findata):
+    for j in range(len(findata)):
+        if findata[j][0] == "Transfer" and findata[j][4][:12] != "Begin Saldos":
+            print(j, findata[j])
+    return
+
 def process_transactions(findata, d):
     delta = date_from_days(d)
     enddate = delta.strftime('%Y-%m-%d')
@@ -188,6 +194,7 @@ if __name__ == '__main__':
             count += 1
     print("Length", len(findata))
     begin_saldos(findata)
+    process_transfers(findata)
     #d = days_since_1990(2023, 12, 31)
     #process_transactions(findata, d)
     #BudgetBookBar(MyAccounts)
