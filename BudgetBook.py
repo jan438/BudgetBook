@@ -27,9 +27,9 @@ class Account:
         self.balance = int(remove_decimal_marker(balance))
         self.endmonth = endmonth
 
-def print_myaccounts():
+def print_myaccounts(i):
     for j in range(len(MyAccounts)):
-        print("My accounts", MyAccounts[j].name, str(MyAccounts[j].balance))
+        print(i, "My accounts", MyAccounts[j].name, str(MyAccounts[j].balance))
     return
 
 def days_since_1990(year, month, day):          
@@ -49,13 +49,14 @@ def begin_saldos(findata):
             endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             MyAccounts.append(Account(account, findata[j][3], endmonth))
             processed.append(findata[j])
-    print_myaccounts()
+    print_myaccounts(0)
     return
 
 def process_transfers(findata):
     for j in range(len(findata)):
         if findata[j][0] == "Transfer" and findata[j][4][:12] != "Begin Saldos":
             processed.append(findata[j])
+    print_myaccounts(1)
     return
 
 def process_transactions(findata):
