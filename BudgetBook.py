@@ -58,7 +58,15 @@ def process_transfers(findata):
             account1 = findata[j][4][:4]
             account2 = findata[j][4][9:len(findata[j][4])-1]
             amount = int(remove_decimal_marker(findata[j][3]))
-            print(account1, account2, str(amount))
+            firstaccount = -1
+            secondaccount = -1
+            for i in range(len(MyAccounts)):
+                if account1 == MyAccounts[i].name:
+                    firstaccount = i
+            for i in range(len(MyAccounts)):
+                if account2 == MyAccounts[i].name:
+                    secondaccount = i
+            print(account1, firstaccount, account2, secondaccount, str(amount))
             processed.append(findata[j])
     print_myaccounts(1)
     return
