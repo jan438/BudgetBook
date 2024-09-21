@@ -58,42 +58,43 @@ def process_transfers(findata):
             processed.append(findata[j])
     return
 
-def process_transactions(findata, d):
-    delta = date_from_days(d)
-    enddate = delta.strftime('%Y-%m-%d')
-    endyear = int(enddate[:4])
-    endmonth = int(enddate[5:7])
-    endday = int(enddate[8:10])
-    print("Process tranactions", len(findata), d)
+def process_transactions(findata):
     for j in range(len(findata)):
-        bookdate = findata[j][0]
-        bookday = int(bookdate[:2])
-        bookmonth = int(bookdate[3:5])
-        bookyear = int(bookdate[6:10])
-        try:
-            bd = days_since_1990(bookyear, bookmonth, bookday)
-        except ValueError:
-            print("ValueError", findata[j][0], findata[j][2]) 
-        if bd <= d and findata[j][3] != "Begin Saldos":
-            output_num = remove_decimal_num(findata[j][5])
-            first = False
-            second = False
-            for i in range(len(MyAccounts)):
-                if findata[j][3] == MyAccounts[i].name:
-                    firstaccount = i
-                    first = True
-                if findata[j][4] == MyAccounts[i].name:
-                    secondaccount = i
-                    second = True
-            if first and not second:
-                if findata[j][4] == "Frans":
-                    MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + int(output_num)
-                else:
-                    MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance - int(output_num)
-            if first and second:
-                MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance -  int(output_num)      
-                MyAccounts[secondaccount].balance = MyAccounts[secondaccount].balance +  int(output_num)   
-            print(j, findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
+        if findata[j][0] != "Transfer":
+            processed.append(findata[j])
+    #delta = date_from_days(d)
+    #enddate = delta.strftime('%Y-%m-%d')
+    #endyear = int(enddate[:4])
+    #endmonth = int(enddate[5:7])
+    #endday = int(enddate[8:10])
+    #bookdate = findata[j][0]
+    #bookday = int(bookdate[:2])
+    #bookmonth = int(bookdate[3:5])
+    #bookyear = int(bookdate[6:10])
+    #try:
+        #bd = days_since_1990(bookyear, bookmonth, bookday)
+    #except ValueError:
+        #print("ValueError", findata[j][0], findata[j][2]) 
+    #if bd <= d and findata[j][3] != "Begin Saldos":
+        #output_num = remove_decimal_num(findata[j][5])
+        #first = False
+        #second = False
+        #for i in range(len(MyAccounts)):
+            #if findata[j][3] == MyAccounts[i].name:
+                #firstaccount = i
+                #first = True
+                #if findata[j][4] == MyAccounts[i].name:
+                #secondaccount = i
+                #second = True
+            #if first and not second:
+                #if findata[j][4] == "Frans":
+                    #MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + int(output_num)
+                #else:
+                    #MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance - int(output_num)
+            #if first and second:
+                #MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance -  int(output_num)      
+                #MyAccounts[secondaccount].balance = MyAccounts[secondaccount].balance +  int(output_num)   
+            #print(j, findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
     return
 
 def remove_decimal_marker(string_decimal):
@@ -198,7 +199,7 @@ if __name__ == '__main__':
     begin_saldos(findata)
     process_transfers(findata)
     #d = days_since_1990(2023, 12, 31)
-    #process_transactions(findata, d)
+    process_transactions(findata)
     print("Count processed", len(processed))
     #BudgetBookBar(MyAccounts)
     #BudgetBookPie(MyAccounts)
