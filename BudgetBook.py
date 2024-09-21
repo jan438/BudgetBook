@@ -175,7 +175,7 @@ def BudgetBookPie(data):
 if __name__ == '__main__':
     path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/Data"
     os.chdir(path)
-    file_to_open = "OurBudgetBook.csv"
+    file_to_open = "OurBudgetBookExport.csv"
     count = 0
     som = 0
     findata = []
