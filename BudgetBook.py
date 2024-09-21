@@ -47,9 +47,9 @@ def begin_saldos(findata):
         if findata[j][0] == "Transfer" and findata[j][4][:12] == "Begin Saldos":
             account = findata[j][4][17:]
             print(j,findata[j][0], account, findata[j][3])
-            #endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-            #MyAccounts.append(Account(findata[j][4], findata[j][5], endmonth))
-    #print_myaccounts()
+            endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            MyAccounts.append(Account(account, findata[j][3], endmonth))
+    print_myaccounts()
     return
 
 def process_transactions(findata, d):
@@ -91,7 +91,7 @@ def process_transactions(findata, d):
     return
 
 def remove_decimal_num(string_decimal):
-    return ''.join(string_decimal.split('.'))
+    return ''.join(string_decimal.split(','))
 
 def create_bar_graph(data):
     d = Drawing()
