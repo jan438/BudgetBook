@@ -46,7 +46,7 @@ def begin_saldos(findata):
         #print(j,findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5], findata[j][6])
         if findata[j][0] == "Transfer" and findata[j][4][:12] == "Begin Saldos":
             account = findata[j][4][17:]
-            print(j,findata[j][0], account)
+            print(j,findata[j][0], account, findata[j][3])
             #endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             #MyAccounts.append(Account(findata[j][4], findata[j][5], endmonth))
     #print_myaccounts()
