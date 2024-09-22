@@ -68,7 +68,6 @@ def process_transfers(findata):
                     secondaccount = i
             MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance - amount
             MyAccounts[secondaccount].balance = MyAccounts[secondaccount].balance + amount
-            print(account1, firstaccount, account2, secondaccount, str(amount))
             processed.append(findata[j])
     print_myaccounts(1)
     return
@@ -83,7 +82,6 @@ def process_frans(findata):
                 if account == MyAccounts[i].name:
                     firstaccount = i
             MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + amount
-            print(account, firstaccount, str(amount))
             processed.append(findata[j])
     print_myaccounts(2)
     return
@@ -91,7 +89,16 @@ def process_frans(findata):
 def process_transactions(findata):
     for j in range(len(findata)):
         if findata[j][0] != "Transfer" and findata[j][0] != "Frans":
+            account = findata[j][4][:-1]
+            amount = int(remove_decimal_marker(findata[j][3]))
+            firstaccount = -1
+            for i in range(len(MyAccounts)):
+                if account == MyAccounts[i].name:
+                    firstaccount = i
+            MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + amount
             processed.append(findata[j])
+    print_myaccounts(3)
+    return
     #delta = date_from_days(d)
     #enddate = delta.strftime('%Y-%m-%d')
     #endyear = int(enddate[:4])
@@ -125,7 +132,6 @@ def process_transactions(findata):
                 #MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance -  int(output_num)      
                 #MyAccounts[secondaccount].balance = MyAccounts[secondaccount].balance +  int(output_num)   
             #print(j, findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
-    return
 
 def remove_decimal_marker(string_decimal):
     return ''.join(string_decimal.split(','))
