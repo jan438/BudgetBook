@@ -113,25 +113,6 @@ def process_transactions(findata):
     #except ValueError:
         #print("ValueError", findata[j][0], findata[j][2]) 
     #if bd <= d and findata[j][3] != "Begin Saldos":
-        #output_num = remove_decimal_num(findata[j][5])
-        #first = False
-        #second = False
-        #for i in range(len(MyAccounts)):
-            #if findata[j][3] == MyAccounts[i].name:
-                #firstaccount = i
-                #first = True
-                #if findata[j][4] == MyAccounts[i].name:
-                #secondaccount = i
-                #second = True
-            #if first and not second:
-                #if findata[j][4] == "Frans":
-                    #MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + int(output_num)
-                #else:
-                    #MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance - int(output_num)
-            #if first and second:
-                #MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance -  int(output_num)      
-                #MyAccounts[secondaccount].balance = MyAccounts[secondaccount].balance +  int(output_num)   
-            #print(j, findata[j][0], findata[j][1], findata[j][2], findata[j][3], findata[j][4], findata[j][5])
 
 def remove_decimal_marker(string_decimal):
     return ''.join(string_decimal.split(','))
