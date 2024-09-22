@@ -200,7 +200,10 @@ def BudgetBookPie(data):
     return 0
 
 if __name__ == '__main__':
-    path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/Data"
+    if sys.platform[0] == 'l':
+        path = '/home/jan/git/BudgetBook/Data'
+    if sys.platform[0] == 'w':
+        path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/Data"
     os.chdir(path)
     file_to_open = "OurBudgetBookExport.csv"
     count = 0
