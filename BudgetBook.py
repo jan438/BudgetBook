@@ -73,9 +73,24 @@ def process_transfers(findata):
     print_myaccounts(1)
     return
 
+def process_frans(findata):
+    for j in range(len(findata)):
+        if findata[j][0] == "Frans":
+            account = findata[j][4][:-1]
+            amount = int(remove_decimal_marker(findata[j][3]))
+            firstaccount = -1
+            for i in range(len(MyAccounts)):
+                if account == MyAccounts[i].name:
+                    firstaccount = i
+            MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + amount
+            print(account, firstaccount, str(amount))
+            processed.append(findata[j])
+    print_myaccounts(2)
+    return
+
 def process_transactions(findata):
     for j in range(len(findata)):
-        if findata[j][0] != "Transfer":
+        if findata[j][0] != "Transfer" and findata[j][0] != "Frans":
             processed.append(findata[j])
     #delta = date_from_days(d)
     #enddate = delta.strftime('%Y-%m-%d')
@@ -213,6 +228,7 @@ if __name__ == '__main__':
     print("Length", len(findata))
     begin_saldos(findata)
     process_transfers(findata)
+    process_frans(findata)
     #d = days_since_1990(2023, 12, 31)
     process_transactions(findata)
     print("Count processed", len(processed))
