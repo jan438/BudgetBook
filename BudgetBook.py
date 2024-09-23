@@ -49,7 +49,6 @@ def begin_saldos(findata):
             endmonth = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             MyAccounts.append(Account(account, findata[j][3], endmonth))
             processed.append(findata[j])
-    print_myaccounts(0)
     return
 
 def process_transfers(findata):
@@ -69,7 +68,6 @@ def process_transfers(findata):
             MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance - amount
             MyAccounts[secondaccount].balance = MyAccounts[secondaccount].balance + amount
             processed.append(findata[j])
-    print_myaccounts(1)
     return
 
 def process_frans(findata):
@@ -83,7 +81,6 @@ def process_frans(findata):
                     firstaccount = i
             MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + amount
             processed.append(findata[j])
-    print_myaccounts(2)
     return
 
 def process_transactions(findata):
@@ -97,7 +94,6 @@ def process_transactions(findata):
                     firstaccount = i
             MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + amount
             processed.append(findata[j])
-    print_myaccounts(3)
     return
     #delta = date_from_days(d)
     #enddate = delta.strftime('%Y-%m-%d')
@@ -224,5 +220,5 @@ if __name__ == '__main__':
     print("Count processed", len(processed))
     BudgetBookBar(MyAccounts)
     BudgetBookPie(MyAccounts)
-    #print_myaccounts()
+    print_myaccounts(0)
     key = input("Wait")
