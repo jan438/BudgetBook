@@ -61,6 +61,19 @@ def begin_saldos(findata):
             processed.append(findata[j])
     return
 
+def init_categories(findata):
+    for j in range(len(findata)):
+        category = findata[j][0]
+        if category != "Transfer" and category != "Frans":
+            categoryindex = -1
+            for i in range(len(MyCategories)):
+                if category == MyCategories[i].name:
+                    categoryindex = i
+                    break
+            if categoryindex < 0:
+                MyCategories.append(Category(category))
+    return
+
 def process_transfers(findata):
     for j in range(len(findata)):
         if findata[j][0] == "Transfer" and findata[j][4][:12] != "Begin Saldos":
@@ -103,7 +116,7 @@ def process_transactions(findata):
                     categoryindex = i
                     break
             if categoryindex < 0:
-                MyCategories.append(Category(category))
+                break
             account = findata[j][4][:-1]
             amount = int(remove_decimal_marker(findata[j][3]))
             firstaccount = -1
@@ -231,6 +244,7 @@ if __name__ == '__main__':
             count += 1
     print("Length", len(findata))
     begin_saldos(findata)
+    init_categories(findata)
     process_transfers(findata)
     process_frans(findata)
     #d = days_since_1990(2023, 12, 31)
