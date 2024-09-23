@@ -124,6 +124,8 @@ def process_transactions(findata):
                 if account == MyAccounts[i].name:
                     firstaccount = i
             MyAccounts[firstaccount].balance = MyAccounts[firstaccount].balance + amount
+            print(category, MyCategories[categoryindex].name)
+            MyCategories[categoryindex].total = MyCategories[categoryindex].total - amount
             processed.append(findata[j])
     return
     #delta = date_from_days(d)
