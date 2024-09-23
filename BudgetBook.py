@@ -127,20 +127,6 @@ def process_transactions(findata):
             MyCategories[categoryindex].total = MyCategories[categoryindex].total - amount
             processed.append(findata[j])
     return
-    #delta = date_from_days(d)
-    #enddate = delta.strftime('%Y-%m-%d')
-    #endyear = int(enddate[:4])
-    #endmonth = int(enddate[5:7])
-    #endday = int(enddate[8:10])
-    #bookdate = findata[j][0]
-    #bookday = int(bookdate[:2])
-    #bookmonth = int(bookdate[3:5])
-    #bookyear = int(bookdate[6:10])
-    #try:
-        #bd = days_since_1990(bookyear, bookmonth, bookday)
-    #except ValueError:
-        #print("ValueError", findata[j][0], findata[j][2]) 
-    #if bd <= d and findata[j][3] != "Begin Saldos":
 
 def remove_decimal_marker(string_decimal):
     return ''.join(string_decimal.split(','))
