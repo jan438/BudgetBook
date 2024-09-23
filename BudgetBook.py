@@ -36,6 +36,11 @@ def print_myaccounts(i):
         print(i, "My accounts", MyAccounts[j].name, str(MyAccounts[j].balance))
     return
 
+def print_mycategories(i):
+    for j in range(len(MyCategories)):
+        print(i, "My categories", MyCategories[j].name)
+    return
+
 def days_since_1990(year, month, day):          
     d = date(year, month, day)
     delta = d - startdate
@@ -91,6 +96,13 @@ def process_transactions(findata):
     for j in range(len(findata)):
         category = findata[j][0]
         if category != "Transfer" and category != "Frans":
+            categoryindex = -1
+            for i in range(len(MyCategories)):
+                if category == MyCategories[i].name:
+                    categoryindex = i
+                    break
+            if categoryindex < 0:
+                MyCategories.append(Category(category))
             account = findata[j][4][:-1]
             amount = int(remove_decimal_marker(findata[j][3]))
             firstaccount = -1
@@ -226,4 +238,5 @@ if __name__ == '__main__':
     BudgetBookBar(MyAccounts)
     BudgetBookPie(MyAccounts)
     print_myaccounts(0)
+    print_mycategories(0)
     key = input("Wait")
