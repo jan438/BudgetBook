@@ -154,7 +154,7 @@ def create_bar_graph(data):
     d.add(bar, '')
     return d
 
-def create_pie_chart(data):
+def create_pie_accounts(data):
     d = Drawing()
     pie = Pie()
     pie.x = 225
@@ -165,6 +165,31 @@ def create_pie_chart(data):
     pie.labels = []
     for obj in data:
         pie.data.append(obj.balance)
+        pie.labels.append(obj.name)
+    pie._seriesCount = len(pie.data)
+    add_legend(d, pie, pie.data)
+    pie.slices.strokeWidth = 0.5
+    pie.slices[3].popout = 20
+    pie.slices[0].fillColor = blue
+    pie.slices[1].fillColor = green
+    pie.slices[2].fillColor = brown
+    pie.slices[3].fillColor = yellow
+    pie.slices[4].fillColor = red
+    pie.slices[5].fillColor = purple
+    d.add(pie)
+    return d
+
+def create_pie_categories(data):
+    d = Drawing()
+    pie = Pie()
+    pie.x = 225
+    pie.y = 0
+    pie.width = 250
+    pie.height = 150
+    pie.data = []
+    pie.labels = []
+    for obj in data:
+        pie.data.append(obj.total)
         pie.labels.append(obj.name)
     pie._seriesCount = len(pie.data)
     add_legend(d, pie, pie.data)
@@ -200,13 +225,26 @@ def BudgetBookBar(data):
     doc.build(elements)
     return 0
 
-def BudgetBookPie(data):
-    doc = SimpleDocTemplate('flowable_with_piechart.pdf')
+def BudgetBookAccountsPie(data):
+    doc = SimpleDocTemplate('accounts.pdf')
     elements = []
     styles = getSampleStyleSheet()
     ptext = Paragraph('Text before the chart', styles["Normal"])
     elements.append(ptext)
-    chart = create_pie_chart(data)
+    chart = create_pie_accounts(data)
+    elements.append(chart)
+    ptext = Paragraph('Text after the chart', styles["Normal"])
+    elements.append(ptext)
+    doc.build(elements)
+    return 0
+
+def BudgetBookCategoriesPie(data):
+    doc = SimpleDocTemplate('categories.pdf')
+    elements = []
+    styles = getSampleStyleSheet()
+    ptext = Paragraph('Text before the chart', styles["Normal"])
+    elements.append(ptext)
+    chart = create_pie_categories(data)
     elements.append(chart)
     ptext = Paragraph('Text after the chart', styles["Normal"])
     elements.append(ptext)
@@ -238,7 +276,8 @@ if __name__ == '__main__':
     process_transactions(findata)
     print("Count processed", len(processed))
     BudgetBookBar(MyAccounts)
-    BudgetBookPie(MyAccounts)
+    BudgetBookAccountsPie(MyAccounts)
+    BudgetBookCategoriesPie(MyCategories)
     print_myaccounts(0)
     print_mycategories(0)
     key = input("Wait")
