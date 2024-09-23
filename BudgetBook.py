@@ -16,7 +16,7 @@ from reportlab.graphics.shapes import Drawing, String
 from reportlab.lib.validators import Auto
 
 MyAccounts = []
-categorynames = ['Frans', 'Applicaties', 'Optredens', 'Sjoelen', 'Kapper', 'Singels']
+MyCategories = []
 endmonth = []
 processed = []
 startdate = date(1990,1,1)
@@ -26,6 +26,10 @@ class Account:
         self.name = name
         self.balance = int(remove_decimal_marker(balance))
         self.endmonth = endmonth
+
+class Category:
+    def __init__(self, name):
+        self.name = name
 
 def print_myaccounts(i):
     for j in range(len(MyAccounts)):
@@ -85,7 +89,8 @@ def process_frans(findata):
 
 def process_transactions(findata):
     for j in range(len(findata)):
-        if findata[j][0] != "Transfer" and findata[j][0] != "Frans":
+        category = findata[j][0]
+        if category != "Transfer" and category != "Frans":
             account = findata[j][4][:-1]
             amount = int(remove_decimal_marker(findata[j][3]))
             firstaccount = -1
