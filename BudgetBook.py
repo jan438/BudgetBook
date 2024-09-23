@@ -30,6 +30,7 @@ class Account:
 class Category:
     def __init__(self, name):
         self.name = name
+        self.total = 0
 
 def print_myaccounts(i):
     for j in range(len(MyAccounts)):
@@ -38,7 +39,7 @@ def print_myaccounts(i):
 
 def print_mycategories(i):
     for j in range(len(MyCategories)):
-        print(i, "My categories", MyCategories[j].name)
+        print(i, "My categories", MyCategories[j].name, str(MyCategories[j].total))
     return
 
 def days_since_1990(year, month, day):          
