@@ -12,7 +12,7 @@ class PieChart01(_DrawingEditorMixin,Drawing):
         fontSize = 7
         fontName = 'Times-Roman'
         self._add(self,Pie(),name='chart',validate=None,desc=None)
-        self.chart.width             = self.chart.height = 148 # its a circle
+        self.chart.width             = self.chart.height = 148
         self.chart.sameRadii         = 1
         self.chart.x                 = 1
         self.chart.y                 = 18
@@ -94,3 +94,4 @@ class PieChart01(_DrawingEditorMixin,Drawing):
 
 if __name__=="__main__":
     PieChart01().save(formats=['pdf'],outDir='./Data',fnRoot=None)
+    key = input("Wait")
