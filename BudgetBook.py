@@ -272,7 +272,6 @@ if __name__ == '__main__':
     init_categories(findata)
     process_transfers(findata)
     process_frans(findata)
-    #d = days_since_1990(2023, 12, 31)
     process_transactions(findata)
     print("Count processed", len(processed))
     BudgetBookBar(MyAccounts)
