@@ -66,11 +66,9 @@ class PieChart01(_DrawingEditorMixin,Drawing):
         self.legend.subCols[3].align='numeric'
         self.legend.subCols[3].dx = -10
         self.legend.subCols[3].dx = -15
-        #self.legend.colorNamePairs   = Auto(obj=self.chart)
         self._seriesNames = 'BP', 'Shell Transport & Trading', 'Liberty International', 'Persimmon', 'Royal Bank of Scotland', 'Land Securities', 'BT', 'Standard Chartered', 'Bovis Homes', 'HSBC Holdings', 'Natwest', 'Barclays', 'Sainsburys'
         self._seriesData1 = 27.40, 0, 10.33, 0.6, 27.38, 0, 0, 8.21, 9.30, 3.65, 0, 0, 10.37, 2.4, 2.5, 2.4, 2.55, 1.6
         self._seriesData2 = 37.89, 0, 12.73, 0.74, 24.71, 0, 0, 6.94, 7.87, 0, 0, 0, 3.4, 1.79, 1.8, 1.81, 1.82, 0.5
-        #def getContents(self):
         self._seriesData3 = [x-y for (x,y) in zip(self._seriesData1, self._seriesData2)]
         formatter = DecimalFormatter(places=2,thousandSep=',',decimalSep='.',suffix='%')
         names = list(zip(self._seriesNames,
@@ -94,5 +92,5 @@ class PieChart01(_DrawingEditorMixin,Drawing):
         self.legend.x              = 150
         self.legendHeader.x              = 150
 
-if __name__=="__main__": #NORUNTESTS
+if __name__=="__main__":
     PieChart01().save(formats=['pdf'],outDir='./Data',fnRoot=None)
