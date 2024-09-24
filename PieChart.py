@@ -23,7 +23,7 @@ class PieChart01(_DrawingEditorMixin,Drawing):
         self.legendHeader.x         = 160
         self.legendHeader.y         = self.height
         self.legendHeader.fontSize  = fontSize
-        self.legendHeader.fontName  = 'Times-Bold'#fontName
+        self.legendHeader.fontName  = 'Times-Bold'
         self.legendHeader.subCols[0].minWidth = 240
         self.legendHeader.subCols[0].align = 'left'
         self.legendHeader.subCols[1].minWidth = 60
