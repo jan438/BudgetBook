@@ -109,6 +109,7 @@ def process_frans(findata):
 def process_transactions(findata):
     for j in range(len(findata)):
         category = findata[j][0]
+        print(category)
         if category != "Transfer" and category != "Frans":
             categoryindex = -1
             for i in range(len(MyCategories)):
@@ -280,8 +281,6 @@ if __name__ == '__main__':
             findata.append(row)
             count += 1
     print("Length", len(findata))
-    for i in range(len(findata)):
-        print(findata[i])
     begin_saldos(findata)
     init_categories(findata)
     process_transfers(findata)
