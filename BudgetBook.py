@@ -257,10 +257,24 @@ if __name__ == '__main__':
     if sys.platform[0] == 'w':
         path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/Data"
     os.chdir(path)
-    file_to_open = "OurBudgetBookExport.csv"
     count = 0
     som = 0
     findata = []
+    file_to_open = "CSV Export 2023.csv"
+    with open(file_to_open, 'r') as file:
+        csvreader = csv.reader(file, delimiter = ';')
+        for row in csvreader:
+            if count > 0:
+                findata.append(row)
+            count += 1
+    file_to_open = "CSV Export 2024.csv"
+    with open(file_to_open, 'r') as file:
+        csvreader = csv.reader(file, delimiter = ';')
+        for row in csvreader:
+            if count > 0:
+                findata.append(row)
+            count += 1
+    file_to_open = "CSV Export 2025.csv"
     with open(file_to_open, 'r') as file:
         csvreader = csv.reader(file, delimiter = ';')
         for row in csvreader:
