@@ -271,15 +271,13 @@ if __name__ == '__main__':
     with open(file_to_open, 'r') as file:
         csvreader = csv.reader(file, delimiter = ';')
         for row in csvreader:
-            if count > 0:
-                findata.append(row)
+            findata.append(row)
             count += 1
     file_to_open = "CSV Export 2025.csv"
     with open(file_to_open, 'r') as file:
         csvreader = csv.reader(file, delimiter = ';')
         for row in csvreader:
-            if count > 0:
-                findata.append(row)
+            findata.append(row)
             count += 1
     print("Length", len(findata))
     for i in range(len(findata)):
