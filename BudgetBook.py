@@ -263,20 +263,20 @@ if __name__ == '__main__':
     som = 0
     findata = []
     file_to_open = "CSV Export 2023.csv"
-    with open(file_to_open, 'r') as file:
+    with open(file_to_open, 'r', encoding ='utf-8-sig') as file:
         csvreader = csv.reader(file, delimiter = ';')
         for row in csvreader:
             if count > 0:
                 findata.append(row)
             count += 1
     file_to_open = "CSV Export 2024.csv"
-    with open(file_to_open, 'r') as file:
+    with open(file_to_open, 'r', encoding = 'utf-8-sig') as file:
         csvreader = csv.reader(file, delimiter = ';')
         for row in csvreader:
             findata.append(row)
             count += 1
     file_to_open = "CSV Export 2025.csv"
-    with open(file_to_open, 'r') as file:
+    with open(file_to_open, 'r', encoding ='utf-8-sig') as file:
         csvreader = csv.reader(file, delimiter = ';')
         for row in csvreader:
             findata.append(row)
