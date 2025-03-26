@@ -109,7 +109,8 @@ def process_frans(findata):
 def process_transactions(findata):
     for j in range(len(findata)):
         category = findata[j][0]
-        print(ord(category[0]))
+        if ord(category[0]) == 65279:
+            print(ord(category[0]))
         if category != "Transfer" and category != "Frans":
             categoryindex = -1
             for i in range(len(MyCategories)):
