@@ -282,6 +282,8 @@ if __name__ == '__main__':
                 findata.append(row)
             count += 1
     print("Length", len(findata))
+    for i in range(len(findata)):
+        print(findata[i])
     begin_saldos(findata)
     init_categories(findata)
     process_transfers(findata)
