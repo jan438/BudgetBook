@@ -141,9 +141,11 @@ def remove_decimal_marker(string_decimal):
 def create_bar_graph(data):
     d = Drawing(595, 842)
     bar = VerticalBarChart()
+    bar.categoryAxis.labels.fontName = bbfont
+    bar.categoryAxis.labels.fontSize = 12
     bar.x = 50
     bar.y = 400
-    bar.width = 580
+    bar.width = 500
     bar.height = 300
     accountsbalances = []
     bar.categoryAxis.categoryNames = []
