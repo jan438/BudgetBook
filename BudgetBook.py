@@ -134,12 +134,12 @@ def remove_decimal_marker(string_decimal):
     return ''.join(string_decimal.split(','))
 
 def create_bar_graph(data):
-    d = Drawing()
+    d = Drawing(595, 842)
     bar = VerticalBarChart()
     bar.x = 50
-    bar.y = 30
-    bar.width = 300
-    bar.height = 150
+    bar.y = 400
+    bar.width = 580
+    bar.height = 300
     accountsbalances = []
     bar.categoryAxis.categoryNames = []
     for obj in data:
