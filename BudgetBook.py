@@ -159,10 +159,10 @@ def create_bar_graph(data):
 def create_pie_accounts(data):
     d = Drawing(595, 842)
     pie = Pie()
-    pie.x = 0
-    pie.y = 0
-    pie.width = 550
-    pie.height = 500
+    pie.x = 100
+    pie.y = 50
+    pie.width = 400
+    pie.height = 400
     pie.data = []
     pie.labels = []
     for obj in data:
@@ -184,10 +184,10 @@ def create_pie_accounts(data):
 def create_pie_categories(data):
     d = Drawing(595, 842)
     pie = Pie()
-    pie.x = 0
-    pie.y = 0
-    pie.width = 500
-    pie.height = 500
+    pie.x = 100
+    pie.y = 50
+    pie.width = 400
+    pie.height = 400
     pie.data = []
     pie.labels = []
     for obj in data:
@@ -209,8 +209,8 @@ def create_pie_categories(data):
 def add_legend(draw_obj, chart, data):
     legend = Legend()
     legend.alignment = 'right'
-    legend.x = 0
-    legend.y = 520
+    legend.x = 100
+    legend.y = 600
     legend.colorNamePairs = Auto(obj=chart)
     draw_obj.add(legend)
 
