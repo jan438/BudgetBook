@@ -11,11 +11,16 @@ from reportlab.platypus import Paragraph,SimpleDocTemplate
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.graphics.charts.piecharts import Pie
 from reportlab.lib.colors import brown,blue, PCMYKColor, black, green, red, yellow, purple
+from reportlab.pdfbase import pdfmetrics  
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.pdfmetrics import registerFontFamily
 from reportlab.graphics.charts.legends import Legend
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.graphics.shapes import Drawing, String
 from reportlab.lib.validators import Auto
+
+bbfont = "LiberationSerif"
 
 MyAccounts = []
 MyCategories = []
@@ -197,6 +202,8 @@ def create_pie_categories(data):
     add_legend(d, pie, pie.data)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
+    pie.slices.fontName = bbfont
+    pie.slices.fontSize = 12
     pie.slices[0].fillColor = blue
     pie.slices[1].fillColor = green
     pie.slices[2].fillColor = brown
@@ -235,6 +242,10 @@ if __name__ == '__main__':
     if sys.platform[0] == 'w':
         path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook"
     os.chdir(path)
+    pdfmetrics.registerFont(TTFont('LiberationSerif', 'LiberationSerif-Regular.ttf'))
+    pdfmetrics.registerFont(TTFont('LiberationSerifBold', 'LiberationSerif-Bold.ttf'))
+    pdfmetrics.registerFont(TTFont('LiberationSerifItalic', 'LiberationSerif-Italic.ttf'))
+    pdfmetrics.registerFont(TTFont('LiberationSerifBoldItalic', 'LiberationSerif-BoldItalic.ttf'))
     count = 0
     som = 0
     findata = []
