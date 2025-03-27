@@ -218,6 +218,8 @@ def create_pie_categories(data):
 def add_legend(draw_obj, chart, data):
     legend = Legend()
     legend.alignment = 'right'
+    legend.fontName = bbfont
+    legend.fontSize = 10
     legend.x = 100
     legend.y = 600
     legend.colorNamePairs = Auto(obj=chart)
