@@ -97,4 +97,5 @@ class BarChart01(_DrawingEditorMixin,Drawing):
         return Drawing.getContents(self)
 
 if __name__=="__main__":
-    BarChart01().save(formats=['pdf'],outDir='./Data',fnRoot=None)
+    BarChart01().save(formats=['pdf'],outDir='./PDF',fnRoot=None)
+    key = input("Wait")
