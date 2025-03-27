@@ -213,7 +213,7 @@ def add_legend(draw_obj, chart, data):
     draw_obj.add(legend)
 
 def BudgetBookBar(data):
-    doc = SimpleDocTemplate('flowable_with_barchart.pdf')
+    doc = SimpleDocTemplate('PDF/flowable_with_barchart.pdf')
     elements = []
     styles = getSampleStyleSheet()
     ptext = Paragraph('Text before the chart', styles["Normal"])
@@ -226,7 +226,7 @@ def BudgetBookBar(data):
     return 0
 
 def BudgetBookAccountsPie(data):
-    doc = SimpleDocTemplate('accounts.pdf')
+    doc = SimpleDocTemplate('PDF/accounts.pdf')
     elements = []
     styles = getSampleStyleSheet()
     ptext = Paragraph('Text before the chart', styles["Normal"])
@@ -239,7 +239,7 @@ def BudgetBookAccountsPie(data):
     return 0
 
 def BudgetBookCategoriesPie(data):
-    doc = SimpleDocTemplate('categories.pdf')
+    doc = SimpleDocTemplate('PDF/categories.pdf')
     elements = []
     styles = getSampleStyleSheet()
     ptext = Paragraph('Text before the chart', styles["Normal"])
@@ -253,26 +253,26 @@ def BudgetBookCategoriesPie(data):
 
 if __name__ == '__main__':
     if sys.platform[0] == 'l':
-        path = '/home/jan/git/BudgetBook/Data'
+        path = '/home/jan/git/BudgetBook'
     if sys.platform[0] == 'w':
-        path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook/Data"
+        path = "C:/Users/janbo/OneDrive/Documents/GitHub/BudgetBook"
     os.chdir(path)
     count = 0
     som = 0
     findata = []
-    file_to_open = "CSV Export 2023.csv"
+    file_to_open = "Data/CSV Export 2023.csv"
     with open(file_to_open, 'r', encoding ='utf-8-sig') as file:
         csvreader = csv.reader(file, delimiter = ';')
         for row in csvreader:
             findata.append(row)
             count += 1
-    file_to_open = "CSV Export 2024.csv"
+    file_to_open = "Data/CSV Export 2024.csv"
     with open(file_to_open, 'r', encoding = 'utf-8-sig') as file:
         csvreader = csv.reader(file, delimiter = ';')
         for row in csvreader:
             findata.append(row)
             count += 1
-    file_to_open = "CSV Export 2025.csv"
+    file_to_open = "Data/CSV Export 2025.csv"
     with open(file_to_open, 'r', encoding ='utf-8-sig') as file:
         csvreader = csv.reader(file, delimiter = ';')
         for row in csvreader:
