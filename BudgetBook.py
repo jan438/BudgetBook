@@ -157,12 +157,12 @@ def create_bar_graph(data):
     return d
 
 def create_pie_accounts(data):
-    d = Drawing()
+    d = Drawing(595, 842)
     pie = Pie()
-    pie.x = 225
+    pie.x = 0
     pie.y = 0
-    pie.width = 250
-    pie.height = 150
+    pie.width = 550
+    pie.height = 500
     pie.data = []
     pie.labels = []
     for obj in data:
@@ -182,12 +182,12 @@ def create_pie_accounts(data):
     return d
 
 def create_pie_categories(data):
-    d = Drawing()
+    d = Drawing(595, 842)
     pie = Pie()
-    pie.x = 225
+    pie.x = 0
     pie.y = 0
-    pie.width = 250
-    pie.height = 150
+    pie.width = 500
+    pie.height = 500
     pie.data = []
     pie.labels = []
     for obj in data:
@@ -209,8 +209,8 @@ def create_pie_categories(data):
 def add_legend(draw_obj, chart, data):
     legend = Legend()
     legend.alignment = 'right'
-    legend.x = 10
-    legend.y = 70
+    legend.x = 0
+    legend.y = 520
     legend.colorNamePairs = Auto(obj=chart)
     draw_obj.add(legend)
 
@@ -220,30 +220,14 @@ def BudgetBookBar(data):
     return
 
 def BudgetBookAccountsPie(data):
-    doc = SimpleDocTemplate('PDF/accounts.pdf', pagesize = A4)
-    elements = []
-    styles = getSampleStyleSheet()
-    ptext = Paragraph('Text before the chart', styles["Normal"])
-    elements.append(ptext)
-    chart = create_pie_accounts(data)
-    elements.append(chart)
-    ptext = Paragraph('Text after the chart', styles["Normal"])
-    elements.append(ptext)
-    doc.build(elements)
-    return 0
+    d = create_pie_accounts(data)
+    renderPDF.drawToFile(d, 'PDF/accounts.pdf')
+    return
 
 def BudgetBookCategoriesPie(data):
-    doc = SimpleDocTemplate('PDF/categories.pdf', pagesize = A4)
-    elements = []
-    styles = getSampleStyleSheet()
-    ptext = Paragraph('Text before the chart', styles["Normal"])
-    elements.append(ptext)
-    chart = create_pie_categories(data)
-    elements.append(chart)
-    ptext = Paragraph('Text after the chart', styles["Normal"])
-    elements.append(ptext)
-    doc.build(elements)
-    return 0
+    d = create_pie_categories(data)
+    renderPDF.drawToFile(d, 'PDF/categories.pdf')    
+    return
 
 if __name__ == '__main__':
     if sys.platform[0] == 'l':
