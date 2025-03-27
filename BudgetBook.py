@@ -5,6 +5,7 @@ from pathlib import Path
 from datetime import datetime, date, timedelta
 from reportlab.lib.units import inch
 from reportlab.pdfgen.canvas import Canvas
+from reportlab.graphics import renderPDF
 from reportlab.lib.pagesizes import LETTER, A4, landscape, portrait
 from reportlab.platypus import Paragraph,SimpleDocTemplate
 from reportlab.lib.styles import getSampleStyleSheet
@@ -214,17 +215,9 @@ def add_legend(draw_obj, chart, data):
     draw_obj.add(legend)
 
 def BudgetBookBar(data):
-    doc = SimpleDocTemplate('PDF/flowable_with_barchart.pdf', pagesize = A4)
-    elements = []
-    styles = getSampleStyleSheet()
-    ptext = Paragraph('Text before the chart', styles["Normal"])
-    elements.append(ptext)
-    chart = create_bar_graph(data)
-    elements.append(chart)
-    ptext = Paragraph('Text after the chart', styles["Normal"])
-    elements.append(ptext)
-    doc.build(elements)
-    return 0
+    d = create_bar_graph(data)
+    renderPDF.drawToFile(d, 'PDF/flowable_with_barchart.pdf')
+    return
 
 def BudgetBookAccountsPie(data):
     doc = SimpleDocTemplate('PDF/accounts.pdf', pagesize = A4)
