@@ -177,6 +177,8 @@ def create_pie_accounts(data):
     add_legend(d, pie, pie.data)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
+    pie.slices.fontName = bbfont
+    pie.slices.fontSize = 12
     pie.slices[0].fillColor = blue
     pie.slices[1].fillColor = green
     pie.slices[2].fillColor = brown
