@@ -176,7 +176,7 @@ def create_pie_accounts(data):
     pie.labels = []
     for obj in data:
         pie.data.append(obj.balance)
-        pie.labels.append(obj.name)
+        pie.labels.append(obj.name + " " + str(obj.balance))
     pie._seriesCount = len(pie.data)
     add_legend(d, pie, pie.data)
     pie.slices.strokeWidth = 0.5
@@ -203,7 +203,7 @@ def create_pie_categories(data):
     pie.labels = []
     for obj in data:
         pie.data.append(obj.total)
-        pie.labels.append(obj.name)
+        pie.labels.append(obj.name + " " + str(obj.total))
     pie._seriesCount = len(pie.data)
     add_legend(d, pie, pie.data)
     pie.slices.strokeWidth = 0.5
