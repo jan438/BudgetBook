@@ -16,6 +16,7 @@ class PieChart04(_DrawingEditorMixin,Drawing):
         self.pie.sameRadii          = 1
         self.pie.direction          = 'clockwise'
         self.pie.startAngle         = 90
+        self.pie.sideLabels=True
         self.background = Rect(0, 0, self.width, self.height, strokeColor=PCMYKColor(100,0,0,0), fillColor=PCMYKColor(15,0,0,0))
         self.background.strokeWidth = 0.25
         #self.pie.slices[0].fillColor             = PCMYKColor(0,0,0,100)
