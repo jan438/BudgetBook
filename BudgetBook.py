@@ -176,7 +176,7 @@ def create_pie_accounts(data):
     pie.labels = []
     for obj in data:
         pie.data.append(obj.balance)
-        s = str(obj.balance/100)
+        s = "{:.2f}".format(obj.balance / 100)
         pie.labels.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
     add_legend(d, pie, pie.data)
