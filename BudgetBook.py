@@ -39,14 +39,16 @@ class Category:
         self.name = name
         self.total = 0
 
-def print_myaccounts(i):
+def print_myaccounts():
+    print("Count accounts", len(MyAccounts))
     for j in range(len(MyAccounts)):
-        print(i, "My accounts", MyAccounts[j].name, str(MyAccounts[j].balance))
+        print(j, MyAccounts[j].name, str(MyAccounts[j].balance))
     return
 
-def print_mycategories(i):
+def print_mycategories():
+    print("Count categories", len(MyCategories))
     for j in range(len(MyCategories)):
-        print(i, "My categories", MyCategories[j].name, str(MyCategories[j].total))
+        print(j, MyCategories[j].name, str(MyCategories[j].total))
     return
 
 def days_since_1990(year, month, day):          
@@ -283,6 +285,6 @@ if __name__ == '__main__':
     BudgetBookBar(MyAccounts)
     BudgetBookAccountsPie(MyAccounts)
     BudgetBookCategoriesPie(MyCategories)
-    print_myaccounts(0)
-    print_mycategories(0)
+    print_myaccounts()
+    print_mycategories()
     key = input("Wait")
