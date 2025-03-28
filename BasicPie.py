@@ -44,7 +44,12 @@ class PieChart04(_DrawingEditorMixin,Drawing):
         self.pie.slices[3].fillColor             = PCMYKColor(23,51,0,4,alpha=85)
         self.pie.slices[4].fillColor             = PCMYKColor(66,13,0,22,alpha=85)
         self.background.fillColor        = None
-        self.legend.colorNamePairs = [(PCMYKColor(100,0,90,50,alpha=100), ('BP', '30%')), (PCMYKColor(0,100,100,40,alpha=100), ('Shell Transport & Trading', '21%')), (PCMYKColor(100,60,0,50,alpha=100), ('Liberty International', '21%')), (PCMYKColor(23,51,0,4,alpha=100), ('Persimmon', '14%')), (PCMYKColor(66,13,0,22,alpha=100), ('Royal Bank of Scotland', '14%'))]
+        self.legend.colorNamePairs = [
+        (PCMYKColor(100,0,90,50,alpha=100), ('BP', '30%')), 
+        (PCMYKColor(0,100,100,40,alpha=100), ('Shell Transport & Trading', '21%')),
+        (PCMYKColor(100,60,0,50,alpha=100), ('Liberty International', '21%')),
+        (PCMYKColor(23,51,0,4,alpha=100), ('Persimmon', '14%')), 
+        (PCMYKColor(66,13,0,22,alpha=100), ('Royal Bank of Scotland', '14%'))]
         self.width       = 400
         self.height      = 200
         self.pie.width            = 150
