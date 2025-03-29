@@ -248,6 +248,8 @@ def add_legend2(draw_obj, chart, data, x, y):
     legend.fontSize = 10
     legend.x = x
     legend.y = y
+    for obj in data:
+        print(obj)
     legend.colorNamePairs = [
         (blue, ('BP', '30%')), 
         (green, ('Trading', '21%')),
@@ -290,7 +292,7 @@ def BudgetBookCharts(data1, data2):
     for obj in data2:
         pie.data.append(obj.balance)
     pie._seriesCount = len(pie.data)
-    add_legend2(d, pie, pie.data, 100, 350)
+    add_legend2(d, pie, data2, 100, 350)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
