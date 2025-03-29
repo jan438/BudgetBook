@@ -254,6 +254,30 @@ def BudgetBookCharts(data1, data2):
     bar.bars[0, 4].fillColor = red
     bar.bars[0, 5].fillColor = purple
     d.add(bar, '')
+    pie = Pie()
+    pie.x = 100
+    pie.y = 50
+    pie.width = 200
+    pie.height = 200
+    pie.data = []
+    pie.labels = []
+    for obj in data2:
+        pie.data.append(obj.balance)
+        s = "{:.2f}".format(obj.balance / 100)
+        pie.labels.append(obj.name + " " + s)
+    pie._seriesCount = len(pie.data)
+    #add_legend(d, pie, pie.data)
+    pie.slices.strokeWidth = 0.5
+    pie.slices[3].popout = 20
+    pie.slices.fontName = bbfont
+    pie.slices.fontSize = 12
+    pie.slices[0].fillColor = blue
+    pie.slices[1].fillColor = green
+    pie.slices[2].fillColor = brown
+    pie.slices[3].fillColor = yellow
+    pie.slices[4].fillColor = red
+    pie.slices[5].fillColor = purple
+    d.add(pie)
     renderPDF.drawToFile(d, 'PDF/BugetBook.pdf')
     return
 
