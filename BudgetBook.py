@@ -248,7 +248,12 @@ def add_legend2(draw_obj, chart, data, x, y):
     legend.fontSize = 10
     legend.x = x
     legend.y = y
-    legend.colorNamePairs = Auto(obj=chart)
+    legend.colorNamePairs = [
+        (PCMYKColor(100,0,90,50,alpha=100), ('BP', '30%')), 
+        (PCMYKColor(0,100,100,40,alpha=100), ('Shell Transport & Trading', '21%')),
+        (PCMYKColor(100,60,0,50,alpha=100), ('Liberty International', '21%')),
+        (PCMYKColor(23,51,0,4,alpha=100), ('Persimmon', '14%')), 
+        (PCMYKColor(66,13,0,22,alpha=100), ('Royal Bank of Scotland', '14%'))]
     draw_obj.add(legend)
    
 def BudgetBookCharts(data1, data2):
@@ -283,8 +288,8 @@ def BudgetBookCharts(data1, data2):
     pie.labels = []
     for obj in data2:
         pie.data.append(obj.balance)
-        s = "{:.2f}".format(obj.balance / 100)
-        pie.labels.append(obj.name + " " + s)
+        #s = "{:.2f}".format(obj.balance / 100)
+        #pie.labels.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
     add_legend2(d, pie, pie.data, 100, 350)
     pie.slices.strokeWidth = 0.5
