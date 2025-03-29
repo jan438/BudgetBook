@@ -249,6 +249,7 @@ def add_legend2(draw_obj, chart, data, x, y):
     legend.x = x
     legend.y = y
     legend.colorNamePairs = [
+        #s = "{:.2f}".format(obj.balance / 100)
         (blue, (MyAccounts[0].name, str(MyAccounts[0].balance))), 
         (green, (MyAccounts[1].name, str(MyAccounts[1].balance))),
         (brown, (MyAccounts[2].name, str(MyAccounts[2].balance))),
