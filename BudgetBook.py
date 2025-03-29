@@ -251,7 +251,7 @@ def add_legend2(draw_obj, chart, data, x, y):
     for obj in data:
         print("legend2", obj)
     legend.colorNamePairs = [
-        (blue, ('BP', '30%')), 
+        (blue, (MyAccounts[0].name, '30%')), 
         (green, ('Trading', '21%')),
         (brown, ('International', '21%')),
         (yellow, ('Persimmon', '14%')), 
