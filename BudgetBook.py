@@ -299,7 +299,7 @@ def BudgetBookCharts(data1, data2):
     pie.slices[5].fillColor = purple
     d.add(pie)
     pie = Pie()
-    pie.x = 350
+    pie.x = 340
     pie.y = 50
     pie.width = 175
     pie.height = 175
@@ -310,7 +310,7 @@ def BudgetBookCharts(data1, data2):
         s = str(obj.total/100)
         pie.labels.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
-    add_legend1(d, pie, pie.data, 300, 350)
+    add_legend1(d, pie, pie.data, 340, 350)
     pie.slices.strokeWidth = 0.5
     pie.slices.fontName = bbfont
     pie.slices.fontSize = 12
