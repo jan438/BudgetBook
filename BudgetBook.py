@@ -207,7 +207,7 @@ def create_pie_categories(data):
         s = str(obj.total/100)
         pie.labels.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
-    add_legend(d, pie, pie.data)
+    add_legend2(d, pie, pie.data, 100, 50)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
@@ -228,6 +228,26 @@ def add_legend(draw_obj, chart, data):
     legend.fontSize = 10
     legend.x = 100
     legend.y = 600
+    legend.colorNamePairs = Auto(obj=chart)
+    draw_obj.add(legend)
+    
+def add_legend1(draw_obj, chart, data, x, y):
+    legend = Legend()
+    legend.alignment = 'right'
+    legend.fontName = bbfont
+    legend.fontSize = 10
+    legend.x = x
+    legend.y = y
+    legend.colorNamePairs = Auto(obj=chart)
+    draw_obj.add(legend)
+    
+def add_legend2(draw_obj, chart, data, x, y):
+    legend = Legend()
+    legend.alignment = 'right'
+    legend.fontName = bbfont
+    legend.fontSize = 10
+    legend.x = x
+    legend.y = y
     legend.colorNamePairs = Auto(obj=chart)
     draw_obj.add(legend)
    
@@ -266,7 +286,7 @@ def BudgetBookCharts(data1, data2):
         s = "{:.2f}".format(obj.balance / 100)
         pie.labels.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
-    #add_legend(d, pie, pie.data)
+    add_legend2(d, pie, pie.data, 100, 350)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
@@ -290,7 +310,7 @@ def BudgetBookCharts(data1, data2):
         s = str(obj.total/100)
         pie.labels.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
-    add_legend(d, pie, pie.data)
+    add_legend1(d, pie, pie.data, 300, 350)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
