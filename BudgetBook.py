@@ -249,11 +249,12 @@ def add_legend2(draw_obj, chart, data, x, y):
     legend.x = x
     legend.y = y
     legend.colorNamePairs = [
-        (PCMYKColor(100,0,90,50,alpha=100), ('BP', '30%')), 
-        (PCMYKColor(0,100,100,40,alpha=100), ('Shell Transport & Trading', '21%')),
-        (PCMYKColor(100,60,0,50,alpha=100), ('Liberty International', '21%')),
-        (PCMYKColor(23,51,0,4,alpha=100), ('Persimmon', '14%')), 
-        (PCMYKColor(66,13,0,22,alpha=100), ('Royal Bank of Scotland', '14%'))]
+        (blue, ('BP', '30%')), 
+        (green, ('Trading', '21%')),
+        (brown, ('International', '21%')),
+        (yellow, ('Persimmon', '14%')), 
+        (red, ('BP', '30%')), 
+        (purple, ('Royal', '14%'))]
     draw_obj.add(legend)
    
 def BudgetBookCharts(data1, data2):
