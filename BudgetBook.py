@@ -250,11 +250,11 @@ def add_legend2(draw_obj, chart, data, x, y):
     legend.y = y
     legend.colorNamePairs = [
         (blue, (MyAccounts[0].name, str(MyAccounts[0].balance))), 
-        (green, (MyAccounts[1].name, '21%')),
-        (brown, (MyAccounts[2].name, '21%')),
-        (yellow, (MyAccounts[3].name, '14%')), 
-        (red, (MyAccounts[4].name, '30%')), 
-        (purple, (MyAccounts[5].name, '14%'))]
+        (green, (MyAccounts[1].name, str(MyAccounts[1].balance))),
+        (brown, (MyAccounts[2].name, str(MyAccounts[2].balance))),
+        (yellow, (MyAccounts[3].name, str(MyAccounts[3].balance))), 
+        (red, (MyAccounts[4].name, str(MyAccounts[4].balance))), 
+        (purple, (MyAccounts[5].name, str(MyAccounts[5].balance)))]
     draw_obj.add(legend)
    
 def BudgetBookCharts(data1, data2):
