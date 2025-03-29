@@ -232,7 +232,8 @@ def add_legend(draw_obj, chart, data):
     draw_obj.add(legend)
    
 def BudgetBookCharts(data1, data2):
-    print("BudgetBookCharts")
+    d = Drawing(595, 842)
+    renderPDF.drawToFile(d, 'PDF/BugetBook.pdf')
     return
 
 def BudgetBookBar(data):
