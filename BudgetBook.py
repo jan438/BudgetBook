@@ -249,7 +249,7 @@ def add_legend2(draw_obj, chart, data, x, y):
     legend.x = x
     legend.y = y
     for obj in data:
-        print(obj)
+        print("legend2", obj)
     legend.colorNamePairs = [
         (blue, ('BP', '30%')), 
         (green, ('Trading', '21%')),
