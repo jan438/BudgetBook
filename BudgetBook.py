@@ -289,10 +289,13 @@ def BudgetBookCharts(data1, data2):
     pie.height = 175
     pie.data = []
     pie.labels = []
+    legends = []
     for obj in data2:
         pie.data.append(obj.balance)
+        s = str(obj.balance/100)
+        legends.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
-    add_legend2(d, pie, data2, 100, 350)
+    add_legend2(d, pie, legends, 100, 350)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
