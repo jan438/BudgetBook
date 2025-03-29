@@ -233,6 +233,27 @@ def add_legend(draw_obj, chart, data):
    
 def BudgetBookCharts(data1, data2):
     d = Drawing(595, 842)
+    bar = VerticalBarChart()
+    bar.categoryAxis.labels.fontName = bbfont
+    bar.categoryAxis.labels.fontSize = 12
+    bar.x = 50
+    bar.y = 600
+    bar.width = 500
+    bar.height = 200
+    accountsbalances = []
+    bar.categoryAxis.categoryNames = []
+    for obj in data2:
+        accountsbalances.append(obj.balance)
+        bar.categoryAxis.categoryNames.append(obj.name)
+    bar.data = []
+    bar.data.append(accountsbalances)
+    bar.bars[0, 0].fillColor = blue
+    bar.bars[0, 1].fillColor = green
+    bar.bars[0, 2].fillColor = brown
+    bar.bars[0, 3].fillColor = yellow
+    bar.bars[0, 4].fillColor = red
+    bar.bars[0, 5].fillColor = purple
+    d.add(bar, '')
     renderPDF.drawToFile(d, 'PDF/BugetBook.pdf')
     return
 
