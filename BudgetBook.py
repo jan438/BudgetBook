@@ -288,8 +288,6 @@ def BudgetBookCharts(data1, data2):
     pie.labels = []
     for obj in data2:
         pie.data.append(obj.balance)
-        #s = "{:.2f}".format(obj.balance / 100)
-        #pie.labels.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
     add_legend2(d, pie, pie.data, 100, 350)
     pie.slices.strokeWidth = 0.5
