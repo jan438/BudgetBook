@@ -277,8 +277,8 @@ def BudgetBookCharts(data1, data2):
     pie = Pie()
     pie.x = 100
     pie.y = 50
-    pie.width = 200
-    pie.height = 200
+    pie.width = 175
+    pie.height = 175
     pie.data = []
     pie.labels = []
     for obj in data2:
@@ -299,10 +299,10 @@ def BudgetBookCharts(data1, data2):
     pie.slices[5].fillColor = purple
     d.add(pie)
     pie = Pie()
-    pie.x = 300
+    pie.x = 350
     pie.y = 50
-    pie.width = 200
-    pie.height = 200
+    pie.width = 175
+    pie.height = 175
     pie.data = []
     pie.labels = []
     for obj in data1:
@@ -312,7 +312,6 @@ def BudgetBookCharts(data1, data2):
     pie._seriesCount = len(pie.data)
     add_legend1(d, pie, pie.data, 300, 350)
     pie.slices.strokeWidth = 0.5
-    pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
     pie.slices.fontSize = 12
     pie.slices[0].fillColor = blue
