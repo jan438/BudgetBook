@@ -230,6 +230,10 @@ def add_legend(draw_obj, chart, data):
     legend.y = 600
     legend.colorNamePairs = Auto(obj=chart)
     draw_obj.add(legend)
+   
+def BudgetBookCharts(data1, data2):
+    print("BudgetBookCharts")
+    return
 
 def BudgetBookBar(data):
     d = create_bar_graph(data)
@@ -297,6 +301,7 @@ if __name__ == '__main__':
     BudgetBookBar(MyAccounts)
     BudgetBookAccountsPie(MyAccounts)
     BudgetBookCategoriesPie(MyCategories)
+    BudgetBookCharts(MyCategories, MyAccounts)
     print_myaccounts()
     print_mycategories()
     key = input("Wait")
