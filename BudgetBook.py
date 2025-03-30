@@ -179,7 +179,7 @@ def create_pie_accounts(data):
         s = "{:.2f}".format(obj.balance / 100)
         pie.labels.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
-    add_legend(d, pie, pie.data)
+    AccountLegends(d, pie, pie.data)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
@@ -221,7 +221,7 @@ def create_pie_categories(data):
     d.add(pie)
     return d
 
-def add_legend(draw_obj, chart, data):
+def AccountLegends(draw_obj, chart, data):
     legend = Legend()
     legend.alignment = 'right'
     legend.fontName = bbfont
