@@ -274,6 +274,22 @@ def BBAccountLegends(draw_obj, x, y):
         (purple, (MyAccounts[5].name, "€ {:.2f}".format(MyAccounts[5].balance / 100)))]
     draw_obj.add(legend)
    
+def BBCategoryLegends(draw_obj, x, y):
+    legend = Legend()
+    legend.alignment = 'right'
+    legend.fontName = bbfont
+    legend.fontSize = 10
+    legend.x = x
+    legend.y = y
+    legend.colorNamePairs = [
+        (blue, (MyCategories[0]. name, "€ {:.2f}".format(MyCategories[0].total / 100))), 
+        (green, (MyCategories[1].name, "€ {:.2f}".format(MyCategories[1].total / 100))),
+        (brown, (MyCategories[2].name, "€ {:.2f}".format(MyCategories[2].total / 100))),
+        (yellow, (MyCategories[3].name, "€ {:.2f}".format(MyCategories[3].total / 100))), 
+        (red, (MyCategories[4].name, "€ {:.2f}".format(MyCategories[4].total / 100))), 
+        (purple, (MyCategories[5].name, "€ {:.2f}".format(MyCategories[5].total / 100)))]
+    draw_obj.add(legend)
+
 def BudgetBookCharts(data1, data2):
     d = Drawing(595, 842)
     bar = VerticalBarChart()
@@ -311,7 +327,6 @@ def BudgetBookCharts(data1, data2):
         legends.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
     BBAccountLegends(d, 50, 350)
-    #add_legend2(d, pie, legends, 100, 350)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
@@ -335,7 +350,7 @@ def BudgetBookCharts(data1, data2):
         s = str(obj.total/100)
         pie.labels.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
-    add_legend1(d, pie, pie.data, 340, 350)
+    BBCategoryLegends(d, 340, 350)
     pie.slices.strokeWidth = 0.5
     pie.slices.fontName = bbfont
     pie.slices.fontSize = 12
