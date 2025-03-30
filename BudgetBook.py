@@ -279,7 +279,7 @@ def BBCategoryLegends(draw_obj, x, y):
         (purple, (MyCategories[5].name, "€ {:.2f}".format(MyCategories[5].total / 100)))]
     draw_obj.add(legend)
 
-def BudgetBookCharts(data1, data2):
+def BudgetBookCharts(categories, accounts):
     d = Drawing(595, 842)
     bar = VerticalBarChart()
     bar.categoryAxis.labels.fontName = bbfont
@@ -290,7 +290,7 @@ def BudgetBookCharts(data1, data2):
     bar.height = 200
     accountsbalances = []
     bar.categoryAxis.categoryNames = []
-    for obj in data2:
+    for obj in accounts:
         accountsbalances.append(obj.balance)
         bar.categoryAxis.categoryNames.append(obj.name)
     bar.data = []
@@ -310,7 +310,7 @@ def BudgetBookCharts(data1, data2):
     pie.data = []
     pie.labels = []
     legends = []
-    for obj in data2:
+    for obj in accounts:
         pie.data.append(obj.balance)
         pie.labels.append(obj.name)
     pie._seriesCount = len(pie.data)
@@ -333,7 +333,7 @@ def BudgetBookCharts(data1, data2):
     pie.height = 175
     pie.data = []
     pie.labels = []
-    for obj in data1:
+    for obj in categories:
         pie.data.append(obj.total)
         pie.labels.append(obj.name)
     pie._seriesCount = len(pie.data)
