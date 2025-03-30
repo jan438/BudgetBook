@@ -284,9 +284,9 @@ def BudgetBookCharts(categories, accounts):
     bar = VerticalBarChart()
     bar.categoryAxis.labels.fontName = bbfont
     bar.categoryAxis.labels.fontSize = 12
-    bar.x = 50
+    bar.x = 75
     bar.y = 600
-    bar.width = 500
+    bar.width = 475
     bar.height = 175
     accountbalances = []
     bar.categoryAxis.categoryNames = []
@@ -305,9 +305,9 @@ def BudgetBookCharts(categories, accounts):
     bar = VerticalBarChart()
     bar.categoryAxis.labels.fontName = bbfont
     bar.categoryAxis.labels.fontSize = 12
-    bar.x = 50
+    bar.x = 75
     bar.y = 400
-    bar.width = 500
+    bar.width = 475
     bar.height = 175
     categorytotals = []
     bar.categoryAxis.categoryNames = []
