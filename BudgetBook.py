@@ -207,7 +207,7 @@ def create_pie_categories(data):
         s = str(obj.total/100)
         pie.labels.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
-    add_legend2(d, pie, pie.data, 100, 50)
+    CategoryLegends(d, pie, pie.data, 100, 50)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
@@ -231,7 +231,7 @@ def AccountLegends(draw_obj, chart, data):
     legend.colorNamePairs = Auto(obj=chart)
     draw_obj.add(legend)
     
-def add_legend2(draw_obj, chart, data, x, y):
+def CategoryLegends(draw_obj, chart, data, x, y):
     legend = Legend()
     legend.alignment = 'right'
     legend.fontName = bbfont
@@ -239,7 +239,6 @@ def add_legend2(draw_obj, chart, data, x, y):
     legend.x = x
     legend.y = y
     legend.colorNamePairs = [
-        #s = "{:.2f}".format(obj.balance / 100)
         (blue, (MyAccounts[0].name, str(MyAccounts[0].balance))), 
         (green, (MyAccounts[1].name, str(MyAccounts[1].balance))),
         (brown, (MyAccounts[2].name, str(MyAccounts[2].balance))),
