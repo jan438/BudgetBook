@@ -266,7 +266,7 @@ def BBAccountLegends(draw_obj, x, y):
     legend.x = x
     legend.y = y
     legend.colorNamePairs = [
-        (blue, (MyAccounts[0]. name, "{:.2f}".format(MyAccounts[0].balance / 100))), 
+        (blue, (MyAccounts[0]. name, "€ {:.2f}".format(MyAccounts[0].balance / 100))), 
         (green, (MyAccounts[1].name, "{:.2f}".format(MyAccounts[1].balance / 100))),
         (brown, (MyAccounts[2].name, "{:.2f}".format(MyAccounts[2].balance / 100))),
         (yellow, (MyAccounts[3].name, "{:.2f}".format(MyAccounts[3].balance / 100))), 
