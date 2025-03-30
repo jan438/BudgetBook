@@ -231,16 +231,6 @@ def add_legend(draw_obj, chart, data):
     legend.colorNamePairs = Auto(obj=chart)
     draw_obj.add(legend)
     
-def add_legend1(draw_obj, chart, data, x, y):
-    legend = Legend()
-    legend.alignment = 'right'
-    legend.fontName = bbfont
-    legend.fontSize = 10
-    legend.x = x
-    legend.y = y
-    legend.colorNamePairs = Auto(obj=chart)
-    draw_obj.add(legend)
-    
 def add_legend2(draw_obj, chart, data, x, y):
     legend = Legend()
     legend.alignment = 'right'
