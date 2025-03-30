@@ -287,7 +287,7 @@ def BudgetBookCharts(categories, accounts):
     bar.x = 50
     bar.y = 600
     bar.width = 500
-    bar.height = 200
+    bar.height = 175
     accountbalances = []
     bar.categoryAxis.categoryNames = []
     for obj in accounts:
@@ -308,7 +308,7 @@ def BudgetBookCharts(categories, accounts):
     bar.x = 50
     bar.y = 400
     bar.width = 500
-    bar.height = 200
+    bar.height = 175
     categorytotals = []
     bar.categoryAxis.categoryNames = []
     for obj in categories:
