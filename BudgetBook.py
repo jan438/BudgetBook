@@ -313,8 +313,7 @@ def BudgetBookCharts(data1, data2):
     legends = []
     for obj in data2:
         pie.data.append(obj.balance)
-        s = str(obj.balance/100)
-        legends.append(obj.name + " " + s)
+        pie.labels.append(obj.name)
     pie._seriesCount = len(pie.data)
     BBAccountLegends(d, 50, 350)
     pie.slices.strokeWidth = 0.5
@@ -337,8 +336,7 @@ def BudgetBookCharts(data1, data2):
     pie.labels = []
     for obj in data1:
         pie.data.append(obj.total)
-        s = str(obj.total/100)
-        pie.labels.append(obj.name + " " + s)
+        pie.labels.append(obj.name)
     pie._seriesCount = len(pie.data)
     BBCategoryLegends(d, 340, 350)
     pie.slices.strokeWidth = 0.5
