@@ -335,7 +335,7 @@ def BudgetBookCharts(categories, accounts):
         pie.data.append(obj.balance)
         pie.labels.append(obj.name)
     pie._seriesCount = len(pie.data)
-    BBAccountLegends(d, 50, 350)
+    BBAccountLegends(d, 50, 330)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
@@ -358,7 +358,7 @@ def BudgetBookCharts(categories, accounts):
         pie.data.append(obj.total)
         pie.labels.append(obj.name)
     pie._seriesCount = len(pie.data)
-    BBCategoryLegends(d, 340, 350)
+    BBCategoryLegends(d, 340, 330)
     pie.slices.strokeWidth = 0.5
     pie.slices.fontName = bbfont
     pie.slices.fontSize = 12
