@@ -257,6 +257,22 @@ def add_legend2(draw_obj, chart, data, x, y):
         (red, (MyAccounts[4].name, str(MyAccounts[4].balance))), 
         (purple, (MyAccounts[5].name, str(MyAccounts[5].balance)))]
     draw_obj.add(legend)
+    
+def BBAccountLegends(draw_obj, x, y):
+    legend = Legend()
+    legend.alignment = 'right'
+    legend.fontName = bbfont
+    legend.fontSize = 10
+    legend.x = x
+    legend.y = y
+    legend.colorNamePairs = [
+        (blue, (MyAccounts[0]. name, "{:.2f}".format(MyAccounts[0].balance / 100))), 
+        (green, (MyAccounts[1].name, str(MyAccounts[1].balance))),
+        (brown, (MyAccounts[2].name, str(MyAccounts[2].balance))),
+        (yellow, (MyAccounts[3].name, str(MyAccounts[3].balance))), 
+        (red, (MyAccounts[4].name, str(MyAccounts[4].balance))), 
+        (purple, (MyAccounts[5].name, str(MyAccounts[5].balance)))]
+    draw_obj.add(legend)
    
 def BudgetBookCharts(data1, data2):
     d = Drawing(595, 842)
@@ -294,7 +310,8 @@ def BudgetBookCharts(data1, data2):
         s = str(obj.balance/100)
         legends.append(obj.name + " " + s)
     pie._seriesCount = len(pie.data)
-    add_legend2(d, pie, legends, 100, 350)
+    BBAccountLegends(d, 100, 350)
+    #add_legend2(d, pie, legends, 100, 350)
     pie.slices.strokeWidth = 0.5
     pie.slices[3].popout = 20
     pie.slices.fontName = bbfont
