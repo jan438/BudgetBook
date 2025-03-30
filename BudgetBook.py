@@ -288,13 +288,13 @@ def BudgetBookCharts(categories, accounts):
     bar.y = 600
     bar.width = 500
     bar.height = 200
-    accountsbalances = []
+    accountbalances = []
     bar.categoryAxis.categoryNames = []
     for obj in accounts:
-        accountsbalances.append(obj.balance)
+        accountbalances.append(obj.balance)
         bar.categoryAxis.categoryNames.append(obj.name)
     bar.data = []
-    bar.data.append(accountsbalances)
+    bar.data.append(accountbalances)
     bar.bars[0, 0].fillColor = blue
     bar.bars[0, 1].fillColor = green
     bar.bars[0, 2].fillColor = brown
