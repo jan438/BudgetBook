@@ -239,12 +239,12 @@ def CategoryLegends(draw_obj, chart, data, x, y):
     legend.x = x
     legend.y = y
     legend.colorNamePairs = [
-        (blue, (MyAccounts[0].name, str(MyAccounts[0].balance))), 
-        (green, (MyAccounts[1].name, str(MyAccounts[1].balance))),
-        (brown, (MyAccounts[2].name, str(MyAccounts[2].balance))),
-        (yellow, (MyAccounts[3].name, str(MyAccounts[3].balance))), 
-        (red, (MyAccounts[4].name, str(MyAccounts[4].balance))), 
-        (purple, (MyAccounts[5].name, str(MyAccounts[5].balance)))]
+        (blue, (MyCategories[0].name, str(MyCategories[0].total))), 
+        (green, (MyCategories[1].name, str(MyCategories[1].total))),
+        (brown, (MyCategories[2].name, str(MyCategories[2].total))),
+        (yellow, (MyCategories[3].name, str(MyCategories[3].total))), 
+        (red, (MyCategories[4].name, str(MyCategories[4].total))), 
+        (purple, (MyCategories[5].name, str(MyCategories[5].total)))]
     draw_obj.add(legend)
     
 def BBAccountLegends(draw_obj, x, y):
