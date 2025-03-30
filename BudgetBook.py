@@ -302,6 +302,27 @@ def BudgetBookCharts(categories, accounts):
     bar.bars[0, 4].fillColor = red
     bar.bars[0, 5].fillColor = purple
     d.add(bar, '')
+    bar = VerticalBarChart()
+    bar.categoryAxis.labels.fontName = bbfont
+    bar.categoryAxis.labels.fontSize = 12
+    bar.x = 50
+    bar.y = 400
+    bar.width = 500
+    bar.height = 200
+    categorytotals = []
+    bar.categoryAxis.categoryNames = []
+    for obj in categories:
+        categorytotals.append(obj.total)
+        bar.categoryAxis.categoryNames.append(obj.name)
+    bar.data = []
+    bar.data.append(categorytotals)
+    bar.bars[0, 0].fillColor = blue
+    bar.bars[0, 1].fillColor = green
+    bar.bars[0, 2].fillColor = brown
+    bar.bars[0, 3].fillColor = yellow
+    bar.bars[0, 4].fillColor = red
+    bar.bars[0, 5].fillColor = purple
+    d.add(bar, '')
     pie = Pie()
     pie.x = 100
     pie.y = 50
