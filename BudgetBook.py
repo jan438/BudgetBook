@@ -9,6 +9,7 @@ from reportlab.graphics import renderPDF
 from reportlab.lib.pagesizes import LETTER, A4, landscape, portrait
 from reportlab.platypus import Paragraph,SimpleDocTemplate
 from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.colors import blue, green, black, red, pink, gray, brown, purple, orange, yellow, white, lightgrey
 from reportlab.graphics.charts.piecharts import Pie
 from reportlab.lib.colors import brown,blue, PCMYKColor, black, green, red, yellow, purple
 from reportlab.pdfbase import pdfmetrics  
@@ -281,6 +282,7 @@ def BBCategoryLegends(draw_obj, x, y):
 
 def BudgetBookCharts(categories, accounts):
     d = Drawing(595, 842)
+    d.add(String(0, 830, "Category Report", fontSize = 20, fillColor = purple))
     bar = VerticalBarChart()
     bar.categoryAxis.labels.fontName = bbfont
     bar.categoryAxis.labels.fontSize = 12
