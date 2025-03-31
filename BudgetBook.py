@@ -282,14 +282,14 @@ def BBCategoryLegends(draw_obj, x, y):
 
 def BudgetBookCharts(categories, accounts):
     d = Drawing(595, 842)
-    d.add(String(0, 830, "Category Report", fontSize = 20, fillColor = purple))
+    d.add(String(75, 830, "Category Report", fontSize = 20, fillColor = purple))
     bar = VerticalBarChart()
     bar.categoryAxis.labels.fontName = bbfont
     bar.categoryAxis.labels.fontSize = 12
     bar.x = 75
-    bar.y = 600
+    bar.y = 650
     bar.width = 475
-    bar.height = 175
+    bar.height = 170
     accountbalances = []
     bar.categoryAxis.categoryNames = []
     for obj in accounts:
