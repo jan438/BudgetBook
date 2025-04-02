@@ -219,7 +219,7 @@ def BudgetBookCharts(categories, accounts):
     bar.bars[0, 4].fillColor = red
     bar.bars[0, 5].fillColor = purple
     d.add(bar, '')
-    d.add(String(75, 400, "Account Pie Report", fontSize = 20, fillColor = purple))
+    d.add(String(75, 390, "Account Pie Report", fontSize = 20, fillColor = purple))
     pie = Pie()
     pie.x = 100
     pie.y = 50
@@ -244,7 +244,7 @@ def BudgetBookCharts(categories, accounts):
     pie.slices[4].fillColor = red
     pie.slices[5].fillColor = purple
     d.add(pie)
-    d.add(String(340, 400, "Category Pie Report", fontSize = 20, fillColor = purple))
+    d.add(String(340, 390, "Category Pie Report", fontSize = 20, fillColor = purple))
     pie = Pie()
     pie.x = 340
     pie.y = 50
