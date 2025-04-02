@@ -180,7 +180,7 @@ def BudgetBookCharts(categories, accounts):
     bar.categoryAxis.labels.fontName = bbfont
     bar.categoryAxis.labels.fontSize = 12
     bar.x = 75
-    bar.y = 650
+    bar.y = 645
     bar.width = 475
     bar.height = 170
     accountbalances = []
