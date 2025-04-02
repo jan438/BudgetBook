@@ -175,12 +175,12 @@ def BBCategoryLegends(draw_obj, x, y):
 
 def BudgetBookCharts(categories, accounts):
     d = Drawing(595, 842)
-    d.add(String(75, 820, "Account Bar Report", fontSize = 20, fillColor = purple))
+    d.add(String(75, 815, "Account Bar Report", fontSize = 20, fillColor = purple))
     bar = VerticalBarChart()
     bar.categoryAxis.labels.fontName = bbfont
     bar.categoryAxis.labels.fontSize = 12
     bar.x = 75
-    bar.y = 640
+    bar.y = 635
     bar.width = 475
     bar.height = 170
     accountbalances = []
@@ -197,12 +197,12 @@ def BudgetBookCharts(categories, accounts):
     bar.bars[0, 4].fillColor = red
     bar.bars[0, 5].fillColor = purple
     d.add(bar, '')
-    d.add(String(75, 605, "Category Bar Report", fontSize = 20, fillColor = purple))
+    d.add(String(75, 600, "Category Bar Report", fontSize = 20, fillColor = purple))
     bar = VerticalBarChart()
     bar.categoryAxis.labels.fontName = bbfont
     bar.categoryAxis.labels.fontSize = 12
     bar.x = 75
-    bar.y = 425
+    bar.y = 420
     bar.width = 475
     bar.height = 170
     categorytotals = []
@@ -219,7 +219,7 @@ def BudgetBookCharts(categories, accounts):
     bar.bars[0, 4].fillColor = red
     bar.bars[0, 5].fillColor = purple
     d.add(bar, '')
-    d.add(String(75, 385, "Account Pie Report", fontSize = 20, fillColor = purple))
+    d.add(String(75, 380, "Account Pie Report", fontSize = 20, fillColor = purple))
     pie = Pie()
     pie.x = 100
     pie.y = 50
@@ -244,7 +244,7 @@ def BudgetBookCharts(categories, accounts):
     pie.slices[4].fillColor = red
     pie.slices[5].fillColor = purple
     d.add(pie)
-    d.add(String(340, 385, "Category Pie Report", fontSize = 20, fillColor = purple))
+    d.add(String(340, 380, "Category Pie Report", fontSize = 20, fillColor = purple))
     pie = Pie()
     pie.x = 340
     pie.y = 50
