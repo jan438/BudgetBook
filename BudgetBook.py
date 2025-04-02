@@ -140,114 +140,7 @@ def process_transactions(findata):
 
 def remove_decimal_marker(string_decimal):
     return ''.join(string_decimal.split(','))
-
-def create_bar_graph(data):
-    d = Drawing(595, 842)
-    bar = VerticalBarChart()
-    bar.categoryAxis.labels.fontName = bbfont
-    bar.categoryAxis.labels.fontSize = 12
-    bar.x = 50
-    bar.y = 400
-    bar.width = 500
-    bar.height = 300
-    accountsbalances = []
-    bar.categoryAxis.categoryNames = []
-    for obj in data:
-        accountsbalances.append(obj.balance)
-        bar.categoryAxis.categoryNames.append(obj.name)
-    bar.data = []
-    bar.data.append(accountsbalances)
-    bar.bars[0, 0].fillColor = blue
-    bar.bars[0, 1].fillColor = green
-    bar.bars[0, 2].fillColor = brown
-    bar.bars[0, 3].fillColor = yellow
-    bar.bars[0, 4].fillColor = red
-    bar.bars[0, 5].fillColor = purple
-    d.add(bar, '')
-    return d
-
-def create_pie_accounts(data):
-    d = Drawing(595, 842)
-    pie = Pie()
-    pie.x = 100
-    pie.y = 50
-    pie.width = 400
-    pie.height = 400
-    pie.data = []
-    pie.labels = []
-    for obj in data:
-        pie.data.append(obj.balance)
-        s = "{:.2f}".format(obj.balance / 100)
-        pie.labels.append(obj.name + " " + s)
-    pie._seriesCount = len(pie.data)
-    AccountLegends(d, pie, pie.data)
-    pie.slices.strokeWidth = 0.5
-    pie.slices[3].popout = 20
-    pie.slices.fontName = bbfont
-    pie.slices.fontSize = 12
-    pie.slices[0].fillColor = blue
-    pie.slices[1].fillColor = green
-    pie.slices[2].fillColor = brown
-    pie.slices[3].fillColor = yellow
-    pie.slices[4].fillColor = red
-    pie.slices[5].fillColor = purple
-    d.add(pie)
-    return d
-
-def create_pie_categories(data):
-    d = Drawing(595, 842)
-    pie = Pie()
-    pie.x = 100
-    pie.y = 50
-    pie.width = 400
-    pie.height = 400
-    pie.data = []
-    pie.labels = []
-    for obj in data:
-        pie.data.append(obj.total)
-        s = str(obj.total/100)
-        pie.labels.append(obj.name + " " + s)
-    pie._seriesCount = len(pie.data)
-    CategoryLegends(d, pie, pie.data, 100, 50)
-    pie.slices.strokeWidth = 0.5
-    pie.slices[3].popout = 20
-    pie.slices.fontName = bbfont
-    pie.slices.fontSize = 12
-    pie.slices[0].fillColor = blue
-    pie.slices[1].fillColor = green
-    pie.slices[2].fillColor = brown
-    pie.slices[3].fillColor = yellow
-    pie.slices[4].fillColor = red
-    pie.slices[5].fillColor = purple
-    d.add(pie)
-    return d
-
-def AccountLegends(draw_obj, chart, data):
-    legend = Legend()
-    legend.alignment = 'right'
-    legend.fontName = bbfont
-    legend.fontSize = 10
-    legend.x = 100
-    legend.y = 600
-    legend.colorNamePairs = Auto(obj=chart)
-    draw_obj.add(legend)
-    
-def CategoryLegends(draw_obj, chart, data, x, y):
-    legend = Legend()
-    legend.alignment = 'right'
-    legend.fontName = bbfont
-    legend.fontSize = 10
-    legend.x = x
-    legend.y = y
-    legend.colorNamePairs = [
-        (blue, (MyCategories[0].name, str(MyCategories[0].total))), 
-        (green, (MyCategories[1].name, str(MyCategories[1].total))),
-        (brown, (MyCategories[2].name, str(MyCategories[2].total))),
-        (yellow, (MyCategories[3].name, str(MyCategories[3].total))), 
-        (red, (MyCategories[4].name, str(MyCategories[4].total))), 
-        (purple, (MyCategories[5].name, str(MyCategories[5].total)))]
-    draw_obj.add(legend)
-    
+  
 def BBAccountLegends(draw_obj, x, y):
     legend = Legend()
     legend.alignment = 'right'
@@ -440,9 +333,6 @@ if __name__ == '__main__':
     process_transactions(findata)
     print("\nProcess transactions")
     print("Count processed", len(processed))
-    BudgetBookBar(MyAccounts)
-    BudgetBookAccountsPie(MyAccounts)
-    BudgetBookCategoriesPie(MyCategories)
     BudgetBookCharts(MyCategories, MyAccounts)
     print_myaccounts()
     print_mycategories()
