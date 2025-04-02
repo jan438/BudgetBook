@@ -197,12 +197,12 @@ def BudgetBookCharts(categories, accounts):
     bar.bars[0, 4].fillColor = red
     bar.bars[0, 5].fillColor = purple
     d.add(bar, '')
-    d.add(String(75, 620, "Category Bar Report", fontSize = 20, fillColor = purple))
+    d.add(String(75, 610, "Category Bar Report", fontSize = 20, fillColor = purple))
     bar = VerticalBarChart()
     bar.categoryAxis.labels.fontName = bbfont
     bar.categoryAxis.labels.fontSize = 12
     bar.x = 75
-    bar.y = 445
+    bar.y = 430
     bar.width = 475
     bar.height = 170
     categorytotals = []
